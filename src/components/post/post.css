@@ -1,0 +1,47 @@
+.post-box {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+
+}
+
+.left {
+    float: left;
+    text-align: left;
+
+}
+
+.right {
+    float: right;
+    text-align: right;
+}
+
+.post-box__text {
+    width: 380px;
+    height: content-box;
+
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #1E1E1E;
+
+}
+
+.post-box__time {
+    width: 23px;
+    height: 9px;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 9px;
+    text-align: right;
+    float: right;
+    justify-content: flex-end;
+    color: #999999;
+
+    border: #1E1E1E solid 1px;
+}
+

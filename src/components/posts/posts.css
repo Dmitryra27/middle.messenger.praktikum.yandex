@@ -1,0 +1,22 @@
+.posts-box {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    margin-top: 0;
+    border: blue 1px solid;
+
+}
+
+.data {
+    text-align: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.left {
+    margin-left: 0;
+}
+
+.right {
+    margin-right: 0;
+}

@@ -1,0 +1,38 @@
+.left-charts-box {
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: column;
+    width: 100%;
+    max-width: 310px;
+    height: 720px;
+    background: #FBFBFB;
+
+}
+
+.chart-profile {
+    height: 30px;
+    width: 100%;
+    max-width: 310px;
+    float: right;
+}
+
+.search {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #999999;
+    width: 290px;
+    height: 32px;
+    background: #EFEFEF;
+    border-radius: 5px;
+}
+
+.left-charts-box__child {
+    border: 1px grey solid;
+    max-height: 60px;
+    width: 100%;
+    max-width: 300px;
+}

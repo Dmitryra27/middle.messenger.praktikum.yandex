@@ -1,0 +1,33 @@
+.footer__box {
+    width: 100%;
+    height: 30px;
+}
+
+.footer__row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: flex-start;
+}
+
+.paperclip {
+    background-image: url("../../../static/symbols/Group197.jpg");
+    width: 32px;
+    height: 32px;
+
+
+}
+
+.search {
+    width: 100%;
+    border: 1px grey solid;
+    border-radius: 20px;
+}
+
+.blue_point_right {
+    background-image: url('../../../static/symbols/blue_point_right.jpg');
+    width: 28px;
+    height: 28px;
+
+}
