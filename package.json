@@ -2,15 +2,16 @@
   "name": "sprint_1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "source": "static/index.html",
+  "main": "index.js",
   "browserslist": [
     "> 0.5%, last 2 versions, not dead"
   ],
   "scripts": {
+    "start": "parcel static/index.html --port 3000",
     "dev": "parcel static/index.html --port 3000",
     "build": "parcel build static/index.html ",
-    "start": "node ./server.js"
+    "startserver": "node ./server.js"
   },
   "keywords": [],
   "author": "",
