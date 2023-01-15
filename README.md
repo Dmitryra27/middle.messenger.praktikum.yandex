@@ -31,3 +31,6 @@ HTML, CSS, PostCSS, JS, NodeJS, библиотеки : express.js, Parcel, Handl
 
 [на Figma от Yandex-Practicum](https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=12%3A35&t=KQWNDasvC8ofIxcB-0)
 
+### Netlify
+
+[Сайт на хостинге netlify.com](https://63c42e8fe7317a7c2681cf32--dreamy-cassata-053c4c.netlify.app/)
