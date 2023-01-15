@@ -3,9 +3,7 @@
     justify-content: flex-start;
     flex-flow: column;
     margin-top: 0;
-    border: blue 1px solid;
-
-}
+    }
 
 .data {
     text-align: center;
