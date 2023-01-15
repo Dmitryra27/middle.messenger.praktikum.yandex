@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "source": "static/index.html",
-  "main": "index.js",
   "browserslist": [
     "> 0.5%, last 2 versions, not dead"
   ],
