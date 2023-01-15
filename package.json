@@ -2,7 +2,7 @@
   "name": "sprint_1",
   "version": "1.0.0",
   "description": "",
-  "main": "static/index.html",
+  "main": "index.js",
   "source": "static/index.html",
   "browserslist": [
     "> 0.5%, last 2 versions, not dead"
