@@ -8,9 +8,9 @@
     "> 0.5%, last 2 versions, not dead"
   ],
   "scripts": {
-    "start-parcel": "parcel static/index.html  --port 3000",
-    "dev": "parcel static/index.html -d ./dist --port 3000",
-    "build": "parcel build static/index.html -d ./dist --port 3000",
+    "start-parcel": "parcel static/index.html",
+    "dev": "parcel static/index.html -d ./dist",
+    "build": "parcel build static/index.html -d ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server.js"
   },
