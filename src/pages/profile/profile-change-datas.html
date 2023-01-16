@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Change Datas Page</title>
+    <link href="../../components/profile/profile.scss" rel="stylesheet" type="text/scss">
+</head>
+<body>
+<div class="user-profile-container row" onload="btnActions()">
+    <div class="user-profile__left">
+        <div class="pointer profile-center"></div>
+    </div>
+    <div class="user-profile__right column">
+
+        <div class="user-profile__foto-img"></div>
+
+
+        <div class='user-profile-box column'>
+            <div class="user-profile__child row">
+                <div class="profile-left">Почта:</div>
+                <input class="profile-right" id="email" name="email" placeholder="${user.email}" type="text">
+            </div>
+            <div class="user-profile__child row">
+                <div class="profile-left">Логин:</div>
+                <input class="profile-right" id="login" name="login" placeholder="${user.login}" type="text">
+            </div>
+            <div class="user-profile__child row">
+                <div class="profile-left">Имя:</div>
+                <input class="profile-right" id="first_name" name="first_name" placeholder="${user.first_name}"
+                       type="text">
+            </div>
+            <div class="user-profile__child">
+                <div class="profile-left">Фамилия:</div>
+                <input class="profile-right" id="second_name" name="second_name" placeholder="${user.second_name}"
+                       type="text">
+            </div>
+
+            <div class="user-profile__child row">
+                <div class="profile-left">Имя в чате:</div>
+                <input class="profile-right" id="display_name" name="display_name" placeholder="${user.display_name}"
+                       type="text">
+            </div>
+            <div class="user-profile__child row">
+                <div class="profile-left">Телефон:</div>
+                <input class="profile-right" id="phone" name="phone" placeholder="${user.phone}" type="text">
+            </div>
+
+            <button class="profile-button-save" id='profile-save' onclick="window.location.href = '/profile'"
+                    type="button">Сохранить
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

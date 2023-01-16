@@ -10,8 +10,8 @@ const tpl = (user) =>
                 <div>Электронная почта: <span>${user.email}</span></div>
                 <div>Имя пользователя: <span>${user.login}</span></div>
                 <div>Фамилия: <span>${user.second_name}</span></div>
-                <div>Имя: <span>${user.first_name}</span></ul>
-                <div>Имя в чате: <span>${user.display_name}</span></ul>
+                <div>Имя: <span>${user.first_name}</span></div>
+                <div>Имя в чате: <span>${user.display_name}</span></div>
                 <div>Телефон: <span>${user.phone}</span></div>
             </div>
             <button id = 'change-login-btn' class="button blue" >Сменить данные пользователя</button>

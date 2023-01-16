@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="./style.scss" rel="stylesheet" type="text/scss">
+</head>
+<body>
+<main class="login-container">
+    <div class="container__block">
+        <div class="login-title"><span class="center">Вход</span>
+            <form class='login-form' id='login-form' method="POST">
+
+                <label class='login-label' for="login">Логин:</label>
+                <input autocomplete="login" class='login-input' id="login" name="login" type="text">
+
+                <p class="login-form__error" id="error">Неверный логин</p>
+
+                <label class='login-label' for="password">Пароль:</label>
+                <input autocomplete="password" class='login-input' id="password" name="password" type="password">
+
+                <button class='login-button' id='authButton' onclick="window.location.href = '/'" type="button">
+                    Авторизоваться
+                </button>
+            </form>
+
+            <a class='button_down' href='./register'>Нет аккаунта ? </a>
+        </div>
+</main>
+</body>
+</html>
