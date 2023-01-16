@@ -1,4 +1,4 @@
-import './post.css';
+import './post.scss';
 
 function Post(post) {
 
@@ -7,16 +7,16 @@ function Post(post) {
     if (myPost === false) {
         return (`
     <div class="post-box left">
-         <p class="post-box__text ">${text}</p>
-         <p class="post-box__time right">${time}</p>
+         <div class="post-box__text ">${text}</div>
+         <div class="post-box__time text-center">${time}</div>
          
     </div>`
         );
     } else {
         return (`
-    <div class="post__box right">
-         <p class="post-box__text">${text}</p>
-            <p class="post-box__time right">${time}</p>
+    <div class="post-box row right margin-right30 text-center">
+         <div class="post-box__text">${text}</div>
+         <div class ="post-box__time right margin-top">${time}</div>
     </div>`
         );
     }

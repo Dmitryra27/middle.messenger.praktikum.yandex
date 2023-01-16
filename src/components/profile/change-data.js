@@ -1,4 +1,4 @@
-import './profile.css';
+import './profile.scss';
 
 function ChangeData(user) {
     return (`<div class="user-profile-container row" onload="btnActions()">

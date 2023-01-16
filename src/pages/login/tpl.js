@@ -1,5 +1,5 @@
 const tpl = `
-    <main class="container" >
+    <main class="login-container" >
         <div class="container__block">
             <div class="login-title"><span class="center">Вход</span>
             <form id='login-form' class='login-form' method="POST" >

@@ -2,7 +2,7 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import LeftCharts from "../left-charts/left-charts";
 import Posts from "../posts/posts";
-import './main-component.css'
+import './main-component.scss'
 
 function MainComponent(charts, user, posts) {
 

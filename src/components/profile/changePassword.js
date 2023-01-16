@@ -1,4 +1,4 @@
-import './profile.css';
+import './profile.scss';
 
 function ChangePassword() {
     return (

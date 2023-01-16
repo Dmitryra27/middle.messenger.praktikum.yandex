@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 
 //import image from '../../pages/proba/images/avatar13.jpg';
 

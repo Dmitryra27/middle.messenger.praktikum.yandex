@@ -1,4 +1,4 @@
-import './posts.css'
+import './posts.scss'
 import Post from "../post/post";
 
 function Posts(posts) {

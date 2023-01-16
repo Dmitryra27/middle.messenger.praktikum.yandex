@@ -1,4 +1,4 @@
-import './profile.css';
+import './profile.scss';
 import {btnActions} from '../../utils/profile-btn-actions';
 
 function ProfileComponent(user) {

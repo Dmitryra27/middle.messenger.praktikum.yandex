@@ -1,5 +1,5 @@
 import Handlerbars from 'handlebars';
-import './main.css'
+import './main.scss'
 import tpl from './tpl';
 
 

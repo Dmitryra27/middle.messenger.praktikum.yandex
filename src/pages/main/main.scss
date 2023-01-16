@@ -1,22 +1,24 @@
+@import '../../index.scss';
+
 .container__main {
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
-    flex-flow: row nowrap;
-    width: 100%;
-    margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .container__left-charts {
-    width: 30%;
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
-    flex-flow: row nowrap;
-    box-sizing: border-box;
-    height: 100vh;
-    /*border-right:solid 1px grey ;*/
-    border: solid 1px blue;
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  height: 100vh;
+  border-right: solid 1px $border-bottom-input;
+
 
 }
 
@@ -28,7 +30,7 @@
     flex-flow: column;
     box-sizing: border-box;
     height: 100vh;
-    border: solid 1px red;
+
 }
 
 .central-charts {

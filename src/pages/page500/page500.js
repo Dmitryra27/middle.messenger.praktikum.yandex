@@ -1,5 +1,5 @@
 import Handlerbars from 'handlebars';
-import './style.css'
+import './style.scss'
 import tpl from './tpl';
 
 export default (props = {}) => {

@@ -1,3 +1,5 @@
+@import '../../index.scss';
+
 .register-container {
 
     display: flex;
@@ -20,7 +22,6 @@
     height: 615px;
     width: 340px;
     border-radius: 12px;
-
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
     margin: 0 auto;
 
@@ -30,43 +31,46 @@
     width: 340px;
     height: 450px;
 
+
 }
 
 .register-title {
-    font-family: 'Inter', sans-serif;
+    font-family: $main-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
-    color: #1E1E1E;
+    color: $title-text;
 }
 
 .register-label {
-    font-family: Inter, sans-serif;
+    font-family: $main-font-family;
     font-size: 9px;
     font-weight: 500;
     line-height: 9px;
     letter-spacing: 0;
     text-align: left;
-    color: #999999;
+    color: $label-text;
     margin-left: 30px;
     margin-top: 10px;
+    width: 80%;
+    float: left;
 
 }
 
 .register-input {
-
-    width: 67px;
-    height: 13px;
-    font-family: Inter, sans-serif;
+    font-family: $main-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 13px;
-    color: #1E1E1E;
-    border-bottom: #3369F3 1px solid;
+    color: $input-text;
+    border-bottom: $border-bottom-input 1px solid;
     margin-left: 30px;
     margin-top: 10px;
+    width: 80%;
+    height: 13px;
+    float: left;
 
 }
 
@@ -74,23 +78,31 @@
 
     width: 280px;
     height: 37px;
-    background: #3369F3;
+    background: $background-button;
     border-radius: 8px;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 
-.register-button-bottom {
+.register-button-to-login {
 
     width: 78px;
     height: 11px;
 
-    font-family: Inter, sans-serif;
+    font-family: $main-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
     line-height: 11px;
-    color: #3369F3;
-    margin: 0 auto;
+    color: $a-text;
+    margin: 10px auto;
 
 }
+
+.register-error-message {
+    color: $error-message;
+    float: left;
+    margin-left: 30px;
+    font-size: 8px;
+}
+

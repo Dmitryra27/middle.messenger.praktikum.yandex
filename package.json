@@ -20,6 +20,8 @@
     "@babel/core": "^7.20.12",
     "@parcel/resolver-glob": "^2.8.2",
     "@parcel/transformer-inline-string": "^2.4.1",
+    "@parcel/transformer-less": "^2.8.2",
+    "@parcel/transformer-sass": "^2.8.2",
     "@types/react": "^18.0.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "eslint": "^8.31.0",
@@ -31,6 +33,13 @@
     "parcel-bundler": "^1.12.5",
     "parcel-transformer-hbs": "^1.0.4",
     "postcss": "^8.4.21",
+    "postcss-cli": "^7.1.1",
+    "postcss-each": "^0.10.0",
+    "postcss-prettify": "^0.3.4",
+    "postcss-scss": "^2.0.0",
+    "postcss-strip-inline-comments": "^0.1.5",
+    "precss": "^4.0.0",
+    "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4"
   },
   "dependencies": {
@@ -47,7 +56,15 @@
     "main": "^1000.0.1",
     "mock": "^0.1.1",
     "pages": "^0.0.16",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.21",
+    "postcss-cli": "^7.1.1",
+    "postcss-each": "^0.10.0",
+    "postcss-prettify": "^0.3.4",
+    "postcss-scss": "^2.0.0",
+    "postcss-strip-inline-comments": "^0.1.5",
+    "precss": "^4.0.0",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4"
   },
   "engines": {
     "npm": ">=8.0.0",

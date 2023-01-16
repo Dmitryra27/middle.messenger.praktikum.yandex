@@ -1,4 +1,4 @@
-import '../../components/profile/profile.css'
+import '../../components/profile/profile.scss'
 import ChangeData from '../../components/profile/change-data';
 
 function ProfileChangeDatas(user) {

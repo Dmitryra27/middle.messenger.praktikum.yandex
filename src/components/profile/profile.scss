@@ -1,8 +1,9 @@
+@import '../../index.scss';
 .user-profile-container {
 
     width: 1280px;
     height: 720px;
-    background: #FFFFFF;
+    background: $block-background;
 }
 
 .row {
@@ -27,7 +28,7 @@
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    background: #E5E5E5;
+    background-color: $user-profile-left-background;
 }
 
 .user-profile__right {
@@ -55,7 +56,7 @@
 .user-profile__child {
     display: flex;
     flex-flow: row nowrap;
-    border-bottom: #EAEAEA 1px solid;
+    border-bottom: $border-bottom-box 1px solid;
 
 }
 
@@ -93,7 +94,7 @@
 }
 
 .img__text {
-    color: black;
+    color: $p-text;
     visibility: hidden;
     opacity: 0;
     transition: opacity .2s, visibility .2s;
@@ -109,14 +110,14 @@
     height: 16px;
     margin-bottom: 20px;
 
-    font-family: Inter, sans-serif;
+    font-family: $main-font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 16px;
     text-align: center;
 
-    color: #1E1E1E;
+    color: $p-text;
 }
 
 .user-datas {
@@ -127,7 +128,7 @@
 
     width: content-box;
     height: 13px;
-    font-family: Inter, sans-serif;
+    font-family: $main-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -137,27 +138,27 @@
 .profile-button-save {
     width: 280px;
     height: 37px;
-    background-color: #3369F3;
+    background-color: $background-button;
     border-radius: 8px;
-    color: white;
+    color: $button-text;
 
 }
 
 .blue {
-    color: #3369F3;
+    color: $a-text;
 }
 
 .red {
-    color: #FF0000;
+    color: $error-message;
 }
 
 input {
     outline: none;
     box-shadow: none;
-    border-top: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid $white;
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $border-bottom-input-grey;
 }
 
 input:active, :hover, :focus {

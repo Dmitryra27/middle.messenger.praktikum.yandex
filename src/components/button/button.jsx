@@ -1,4 +1,4 @@
-import './style.module.css';
+import './style.module.scss';
 
 function Button(value) {
     return (`

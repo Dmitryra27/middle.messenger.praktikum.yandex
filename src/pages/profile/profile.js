@@ -1,5 +1,5 @@
 import Handlerbars from 'handlebars';
-import '../../components/profile/profile.css'
+import '../../components/profile/profile.scss'
 import tpl from './tpl';
 
 
