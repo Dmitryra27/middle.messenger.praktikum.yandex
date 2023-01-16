@@ -1,0 +1,15 @@
+# Redirect with a 301
+/               src/main/main-old.js              301
+/register       src/register/register.js                301
+/login          src/login/login.js          301
+/profile        src/profile/profile         301
+/page500        src/page500/page500.js      301
+/profileChangeDatas  src/profile/profile-change-datas.js  301
+/profilePassword  src/profile/profile-change-password.js  301
+
+
+
+# Show a custom 404 for this path
+/*              src/page404/page404.js  404
+
+
