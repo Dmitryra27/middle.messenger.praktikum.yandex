@@ -1,0 +1,172 @@
+@import '../../index.scss';
+.user-profile-container {
+
+    width: 1280px;
+    height: 720px;
+    background: $block-background;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+.column {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.user-profile-left {
+    max-width: 64px;
+    width: 100%;
+    height: 720px;
+    background-image: url("../../../static/symbols/blue_point_left.jpg");
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: $user-profile-left-background;
+}
+
+.user-profile__right {
+    max-width: 1216px;
+    max-height: 720px;
+    width: 100%;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+}
+
+.user-profile-box {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: space-between;
+    width: 50%;
+    height: 50%;
+
+}
+
+.user-profile__child {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: $border-bottom-box 1px solid;
+
+}
+
+.profile-left {
+    width: 50%;
+
+}
+
+.profile-right {
+    text-align: right;
+
+}
+
+.profile-center {
+    margin-top: 300px;
+}
+
+.pointer {
+    width: 28px;
+    height: 28px;
+    background-image: url("../../../static/symbols/blue_point_left.jpg");
+}
+
+.image-box {
+    width: 130px;
+    height: 130px;
+    background-image: url("../../../static/symbols/avatar.jpg");
+}
+
+.user-profile__foto-img {
+    width: 130px;
+    height: 130px;
+    background-image: url("../../../static/images/avatar12.jpg");
+    border-radius: 75px;
+}
+
+.img__text {
+    color: $p-text;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+
+.user-profile__foto-img:hover .img__text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.profile-title-display-name {
+    width: 140px;
+    height: 16px;
+    margin-bottom: 20px;
+
+    font-family: $main-font-family;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+
+    color: $p-text;
+}
+
+.user-datas {
+    width: 40%;
+}
+
+.profile-button {
+
+    width: content-box;
+    height: 13px;
+    font-family: $main-font-family;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.profile-button-save {
+    width: 280px;
+    height: 37px;
+    background-color: $background-button;
+    border-radius: 8px;
+    color: $button-text;
+
+}
+
+.blue {
+    color: $a-text;
+}
+
+.red {
+    color: $error-message;
+}
+
+input {
+    outline: none;
+    box-shadow: none;
+    border-top: 1px solid $white;
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $border-bottom-input-grey;
+}
+
+input:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.margin30 {
+    margin-bottom: 30px;
+}
+

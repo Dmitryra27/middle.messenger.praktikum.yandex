@@ -1,0 +1,38 @@
+@import '../../index.scss';
+.box-500 {
+    max-height: 720px;
+    max-width: 1280px;
+    background-color: $block-background;
+}
+
+.title {
+    font-family: $main-font-family;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0;
+    text-align: center;
+    color: $title-text;
+}
+
+.text {
+    font-family: $main-font-family;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: center;
+    color: $p-text;
+}
+
+.button-page500 {
+    font-family: $main-font-family;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 11px;
+    letter-spacing: 0;
+    text-align: center;
+    color: $a-text;
+    margin: 0 auto;
+}
+

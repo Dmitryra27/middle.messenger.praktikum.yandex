@@ -1,0 +1,50 @@
+@import '../../index.scss';
+
+.chart-box {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 70px;
+    max-width: 290px;
+    margin: 0 auto;
+
+}
+
+.chart-box__image {
+    width: 47px;
+    height: 47px;
+    background-color: $background-image;
+    border-radius: 23px;
+    border: grey 1px solid;
+
+}
+
+.chart-box__box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 242px;
+    width: 100%;
+
+
+}
+
+.child1 {
+    width: 60%;
+}
+
+.child2 {
+    width: 20%;
+}
+
+.child3 {
+    width: 80%;
+}
+
+.child4 {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../../static/symbols/avatar.jpg");
+    font-size: 10px;
+}

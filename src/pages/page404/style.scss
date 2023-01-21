@@ -1,0 +1,39 @@
+@import '../../index.scss';
+
+.box-404 {
+  max-height: 720px;
+  max-width: 1280px;
+  background-color: $block-background;
+}
+
+.title {
+  font-family: $main-font-family;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+
+  text-align: center;
+  color: $title-text;
+}
+
+.text {
+  font-family: $main-font-family;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+
+  text-align: center;
+  color: $title-text;
+}
+
+.button-page404 {
+  font-family: $main-font-family;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 11px;
+
+  text-align: center;
+  color: $a-text;
+  margin: 0 auto;
+
+}

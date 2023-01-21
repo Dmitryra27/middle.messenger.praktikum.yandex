@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link href="./style.scss" rel="stylesheet" type="text/scss">
+</head>
+<body>
+<main class="register-container">
+    <div class="register-block">
+        <div class="register-title"><span class="register-title-span">Регистрация</span></div>
+        <form action="/" class="register-form" method="POST">
+            <label class='register-label' for="email">Почта:</label><br>
+            <input class="register-input" id="email" name="email" placeholder="yakoro@gmail.com" type="text"><br>
+            <label class='register-label' for="login">Логин:</label><br>
+            <input class="register-input" id="login" name="login" placeholder='ivanivanov' type="text"><br>
+            <label class='register-label' for="first_name">Имя:</label><br>
+            <input class="register-input" id="first_name" name="first_name" placeholder="Иван" type="text"><br>
+            <label class='register-label' for="second_name">Фамилия:</label><br>
+            <input class="register-input" id="second_name" name="second_name" placeholder="Иванов" type="text"><br>
+            <label class='register-label' for="phone">Телефон:</label><br>
+            <input class="register-input" id="phone" name="phone" placeholder="+7999 1111111" type="text"><br>
+            <label class='register-label' for="password">Пароль:</label><br>
+            <input class="register-input password" id="password" name="password" placeholder="********" type="password"><br>
+            <label class='register-label' for="password_confirm">Пароль еще раз:</label><br>
+            <input class="register-input password" id="password_confirm" name="password_confirm"
+                   placeholder="**********" type="password"><br>
+            <p class="register-error-message">Пароли не совпадают</p>
+            <input class='register-button' id='regButton' onclick="window.location.href = '/'" type="button"
+                   value="Зарегистрироваться">
+        </form>
+        <br>
+        <br>
+        <a class="register-button-to-login" href="./login">Войти </a>
+    </div>
+</main>
+</body>
+</html>
