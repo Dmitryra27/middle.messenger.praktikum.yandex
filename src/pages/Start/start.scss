@@ -1,0 +1,22 @@
+h1 {
+    font-size: 200%;
+    color: var(--black);
+   text-align: center;
+    margin-bottom: 100px;
+}
+
+.start {
+    background-color: var(--lightGrey);;
+    width: 25vmin;
+    height: 25vmin;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.start_button_blue{
+  background-color: var(--darkBlue);
+  color: var(--white);
+  width: 280px;
+  height: 37px;
+  border-radius: 8px;
+}

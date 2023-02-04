@@ -1,0 +1,128 @@
+.sectionMessage {
+  max-height: 720px;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.headerMessage {
+  width: 100%;
+}
+.width80{
+  width: 400px;
+}
+.chart_message_img{
+
+  margin: 0 auto;
+  width: 34px;
+  height: 34px;
+
+  border: #333333 1px solid;
+  border-radius: 17px;
+
+  background-image: url("../../images/avatar52.jpg");
+}
+.chart_message_right{
+
+  margin: 0 auto;
+  width: 34px;
+  height: 34px;
+
+
+}
+.dialog_center{
+  text-align: center;
+  align-items: center;
+}
+.point{
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+  border: 1px solid #1E1E1E;
+  background-color: #1E1E1E;
+  margin-top: 1px;
+}
+.message_row{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.dialogChat {
+  display: grid;
+  gap: 1em;
+  width: 90%;
+  margin: 1em auto;
+}
+
+.dialog {
+  max-width: 90%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.dialogLeft {
+  justify-self: start;
+  background-color: var(--dialog);
+  border-bottom-left-radius: 0;
+}
+
+.dialogRight {
+  justify-self: end;
+  background-color:var(--dialog);
+  border-bottom-right-radius: 0;
+}
+
+.formSendMessage {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 90%;
+  margin: 1em auto;
+  border: 1px solid var(--lightGrey);
+  border-radius: 10px;
+}
+
+.sendMessage {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-radius: 15px 15px 15px 15px;
+  border: 1px solid var(--lightGrey);
+  margin-top: 1vh;
+  padding: 7px;
+  outline: none;
+
+
+  &:focus,
+  &:active {
+    border: 1px solid var(--danger);
+  }
+
+  &:invalid {
+    color: var(--danger);
+  }
+}
+.skrepka{
+  background-image: url("../../symbols/Group197.jpg");
+  width: 32px;
+  height: 32px;
+}
+.ring{
+  background-image: url("../../symbols/blue_point_right.jpg");
+  width: 28px;
+  height: 28px;
+}
+.message_footer{
+  width: 700px;
+}
+
+.send_button{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../symbols/blue_point_right.jpg");
+  color: #ced5da;
+}

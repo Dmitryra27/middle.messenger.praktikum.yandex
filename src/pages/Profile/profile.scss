@@ -1,0 +1,133 @@
+.profileData {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  width: 500px;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 15px 25px rgb(51 51 51);
+  align-items: center;
+}
+.column{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sectionAvatar {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 30px;
+
+  & > h2 {
+    color: var(--black);
+  }
+}
+
+.fotoUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  //background-color: var(--lightGrey);
+  background-image: url('../../symbols/ellipse17.jpg');
+  border-radius: 50%;
+}
+
+.fotoUserLabel {
+  font-weight: 500;
+}
+
+.fotoUserLabel:hover {
+  color: var(--danger);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.fotoUserInput {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  z-index: -10;
+}
+
+.profileDataSection {
+  width: 90%;
+}
+
+.formBorder {
+  margin-bottom: 25px;
+}
+
+.rowProfile {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--lightGrey);
+  font-size: 14px;
+}
+
+.rowProfile:hover {
+  opacity: 0.7;
+}
+
+.rowProfile:nth-child(6),
+.rowProfile:last-child {
+  margin-bottom: 15px;
+}
+
+p[name] {
+  font-weight: 700;
+}
+
+.editBtn,
+.cancelBtn {
+  font-weight: 400;
+  color: var(--darkGrey);
+  border: 1px solid var(--lightGrey);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.saveBtn {
+  font-weight: 600;
+  color: var(--danger);
+  margin-left: 15px;
+  border: 1px solid var(--danger);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.saveBtn:hover,
+.editBtn:hover,
+.cancelBtn:hover {
+  background-color: var(--transparent);
+}
+
+.btnGroup {
+  text-align: end;
+}
+
+.activFormName {
+  color: var(--danger);
+  font-weight: 400;
+}
+
+.activFormBorder {
+  border: 1px solid var(--danger);
+}
+
+.blue{
+  color: var(--darkBlue);
+  margin-bottom: 50px;
+}
+.red{
+  color: var(--red_link_a);
+}
