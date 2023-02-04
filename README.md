@@ -5,6 +5,10 @@
 ### Готовность проекта
 
 Проект находится в начальной стадии разработки, - сделаны статические страницы.
+Сделана валидация ввода данных и отправки из форм. 
+Данные из форм выводятся в консоль.
+Проект переписан на Typescript, добавлена типизация.
+Добавлена проверка ESLint, Stylelint.
 
 ### Польза проекта
 
@@ -25,7 +29,7 @@
 
 ### Используемый стек технологий
 
-HTML, CSS, PostCSS, JS, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter
+HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter, babel
 
 ### Использован дизайн
 
@@ -33,4 +37,4 @@ HTML, CSS, PostCSS, JS, NodeJS, библиотеки : express.js, Parcel, Handl
 
 ### Netlify
 
-[Сайт на хостинге netlify.com](https://63c42e8fe7317a7c2681cf32--dreamy-cassata-053c4c.netlify.app/)
+[Сайт на хостинге netlify.com](https://63de2439d820f6717f34dedb--dreamy-cassata-053c4c.netlify.app/)

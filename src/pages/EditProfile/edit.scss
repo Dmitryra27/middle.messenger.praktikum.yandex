@@ -1,0 +1,140 @@
+.edit_row{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+}
+.width100{
+    width: 100%;
+    position: relative;
+    max-width: 1280px;
+    max-height: 720px;
+    background: #FFFFFF;
+}
+.edit_left {
+    width: 64px;
+    height: 720px;
+    background-color: #FBFBFB;
+
+    border: #1E1E1E 1px solid; // #EAEAEA;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.edit_img{
+    background-image: url('../../symbols/blue_point_left.jpg');
+    width: 28px;
+    height: 28px;
+}
+
+
+
+.edit_formData{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px ;
+    max-height: 720px;
+    text-align: center;
+    background: var(--white);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    color: var(--danger);
+}
+
+.edit_data_form{
+    width: 100%;
+    max-width: 600px ;
+    max-height: 720px;
+}
+
+
+.title {
+    font-size: 1.5rem;
+}
+
+.formData:hover {
+    opacity: 0.97;
+}
+.fotoUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    //background-color: var(--lightGrey);
+    background-image: url('../../symbols/ellipse17.jpg');
+    border-radius: 50%;
+}
+
+fieldset {
+    padding: 10px;
+    border: 1px solid var(--lightGrey);
+    border-radius: 30px;
+}
+
+legend {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: var(--lightGrey);
+    text-align: center;
+}
+
+.edit_formData h2 {
+    margin: 0 0 10px;
+    color: var(--darkRed);
+    text-align: center;
+}
+
+.edit_inputContainer {
+    position: relative;
+    color: var(--black);
+}
+
+.edit_inputContainer .edit_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    font-size: 16px;
+    color: var(--black);
+    pointer-events: none;
+    transition: 0.5s;
+}
+.edit_input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: var(--darkGrey);
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid var(--lightGrey);
+    outline: none;
+    background: transparent;
+}
+
+
+.edit_input:focus ~ label {
+    color: var(--danger);
+}
+
+
+.edit_input:valid ~ label {
+    color: var(--valid);
+    top: -10px;
+    left: 0;
+    font-size: 12px;
+}
+
+.edit_input:invalid ~ label {
+    color: var(--danger);
+}
+
+.edit_blue{
+    background-color: var(--button-background);
+    color: var(--white);
+}

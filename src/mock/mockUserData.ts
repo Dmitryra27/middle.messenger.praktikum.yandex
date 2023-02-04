@@ -1,6 +1,6 @@
-import {userDataType} from '../types/types';
+// это тест для того, чтобы сделать Pullrequest
 
-export const userData: userDataType = {
+export const userData = {
     "id": 123,
     "first_name": "Petya",
     "second_name": "Pupkin",
