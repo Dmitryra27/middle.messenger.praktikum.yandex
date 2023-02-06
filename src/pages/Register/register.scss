@@ -1,0 +1,88 @@
+.reg__formData{
+  position: absolute;
+  width: 340px;
+  height:550px;
+  left: 470px;
+  top: 135px;
+  text-align: center;
+  background: var(--white);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  color: var(--black);
+}
+
+.reg__title {
+
+  color: var(--black);
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0 0 10px;
+
+
+
+}
+
+.reg__formData:hover {
+  opacity: 0.97;
+}
+
+
+
+legend {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: var(--lightGrey);
+  text-align: center;
+}
+
+
+.reg__inputContainer {
+  position: relative;
+}
+
+.reg__inputContainer .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: var(--danger);
+  pointer-events: none;
+  transition: 0.5s;
+  margin-bottom: 10px;
+}
+
+.input:focus ~ label {
+  color: var(--danger);
+}
+
+
+.input:valid ~ label {
+  color: var(--valid);
+  top: -10px;
+  left: 0;
+  font-size: 12px;
+}
+
+.input:invalid ~ label {
+  color: var(--danger);
+}
+
+
+
+.reg__button{
+  width: 100%;
+  background: var(--button-background);
+  border-radius: 8px;
+
+}
+
+.reg__div__button{
+  margin: 50px auto 10px auto;
+  width: 230px;
+  height: 37px;
+}
