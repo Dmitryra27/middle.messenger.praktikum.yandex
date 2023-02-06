@@ -33,4 +33,4 @@ HTML, CSS, PostCSS, JS, NodeJS, библиотеки : express.js, Parcel, Handl
 
 ### Netlify
 
-[Сайт на хостинге netlify.com](https://63c42e8fe7317a7c2681cf32--dreamy-cassata-053c4c.netlify.app/)
+[Сайт на хостинге netlify.com](https://dreamy-cassata-053c4c.netlify.app/)
