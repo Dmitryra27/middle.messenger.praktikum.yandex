@@ -15,7 +15,7 @@
     height: 720px;
     background-color: #FBFBFB;
 
-    border: #1E1E1E 1px solid; // #EAEAEA;
+    border-right: var(--lightGrey) 1px solid;
     display: flex;
     flex-flow: column;
     justify-content: center;
