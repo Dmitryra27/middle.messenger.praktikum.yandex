@@ -40,4 +40,4 @@ HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parc
 
 ### Netlify
 
-[Сайт на хостинге netlify.com]()
+[Сайт на хостинге netlify.com](https://dreamy-cassata-053c4c.netlify.app/)
