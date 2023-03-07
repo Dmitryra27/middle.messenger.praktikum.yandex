@@ -1,5 +1,6 @@
 import Block from "../../core/Block";
 import template from "./signin.hbs";
+//@ts-ignore
 import * as styles from "./styles.module.scss";
 import Button from "../../components/button";
 
@@ -24,7 +25,7 @@ export default class Signin extends Block {
     super(props);
   }
 
-  async auth(e: Event) {
+  async auth(e: Event|PointerEvent) {
     const data = this.onSubmit(e);
 
     if (data) { 
@@ -61,7 +62,7 @@ export default class Signin extends Block {
       label: "Войти",
       type: "submit",
       events: {
-        click: (e: PointerEvent) => {
+        click: (e) => {
           this.auth(e);
         }
       }, 

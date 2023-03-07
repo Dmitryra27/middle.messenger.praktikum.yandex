@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", async ()=> {
 				console.log('Пользователь не авторизован')
 				Router.go(Routes.Start);
 			}else {
-				console.log('Error = ', e.reason)
+				console.log('Error = ', e)
 				Router.go(Routes.Start);
 			}
 

@@ -176,12 +176,16 @@ class ChatWindow extends Block {
 
 const withChatWindow = withStore(state => {
   const chatId = state.selectedChat;
+  let userId:number|undefined = undefined;
+  if (state.user!==undefined) {
+  	state.user.data.id
+  }
 
   if (!chatId) {
     return {
       messages: [],
       selectedChat: undefined,
-      userId: state.user.id,
+      userId: userId,
       chatError: "",
     }
   }

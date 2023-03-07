@@ -9,7 +9,7 @@ interface ChatItemProps {
   unread_count: number,
   active: boolean,
   events: {
-    click: (e: any) => void,
+    click: (e: Event) => void,
   }, 
 }
 

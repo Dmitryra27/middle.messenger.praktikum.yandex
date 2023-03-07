@@ -21,7 +21,7 @@ function queryStringify(data: unknown) {
   
   let newData = '';
   const pairs = [];
-
+	//@ts-ignore
   for (const [key, value] of Object.entries(data)) {
     pairs.push(`${key}=${value}`);
   }
@@ -30,6 +30,8 @@ function queryStringify(data: unknown) {
       
   return newData;
 }
+
+//type HTTPMethod<T> = (url: string, options?: Options) => Promise<T>
 
 export default class HTTPTransport {
   static API_URL = "https://ya-praktikum.tech/api/v2";
@@ -42,7 +44,23 @@ export default class HTTPTransport {
   private getURL(path: string): string {
     return this.endpoint + path;
   }
-
+/*
+	public get1: HTTPMethod<any> = (url, options = {}) => (
+		this.request(this.getURL(url + queryStringify(options.data)),
+			{...options, method: Methods.Get}, options.timeout)
+	);
+	public put1: HTTPMethod<any> = (url, options = {}) => (
+		this.request(url, {...options, method: Methods.Put}, options.timeout)
+	)
+	// используем тип и удаляем дублирование в аргументах
+	public post1: HTTPMethod<any> = (url, options = {}) => (
+		this.request(url, {...options, method: Methods.Post}, options.timeout)
+	)
+	// используем тип и удаляем дублирование в аргументах
+	public delete1: HTTPMethod<any> = (url, options = {}) => (
+		this.request(url, {...options, method: Methods.Delete}, options.timeout)
+	)
+*/
 	public get<T>(path: string, options: Options = {}): Promise<T> {
     const newUrl = path + queryStringify(options.data);
     return this.request<T>(this.getURL(newUrl), {...options, method: Methods.Get}, options.timeout);

@@ -1,6 +1,7 @@
 import Block from "../../core/Block";
 import template from "./signup.hbs";
 import Button from "../../components/button";
+//@ts-ignore
 import * as styles from "./styles.module.scss";
 
 import validateInput, {validate} from "../../utils/validateInput";

@@ -13,6 +13,7 @@ import withStore from "../../hocs/withStore";
 import UploadFile from "../../components/uploadFile";
 import ProfileController from "../../controlles/ProfileController";
 import AuthController from "../../controlles/AuthController";
+import Store from "../../store/Store";
 
 interface ProfileProps {
   data?: Record<string, string>;
@@ -26,8 +27,15 @@ class Profile extends Block {
   }
 
   private displayName() {
-    const {display_name, first_name} = this.props.data;
-    return display_name ? display_name : first_name;
+  	try {
+			if (Store.getState()!=={} && Store.getState().user.data.first_name!==undefined){
+
+				const {display_name} = this.props.data;
+				return display_name ? display_name : Store.getState().user.first_name;
+			}
+  	}catch (e) {
+			return 'Мишка'
+		}
   }
 
   private createContent() {
@@ -47,9 +55,14 @@ class Profile extends Block {
     }
   }
 
-  getPhoto(photo: string | undefined) {
-    return photo || defPhoto;
-  }
+	getPhoto(photo: string | undefined) {
+		if (photo===undefined){
+			return defPhoto
+		}else{
+			return photo
+		}
+
+	}
 
   protected componentDidUpdate(_oldProps: ProfileProps, newProps: ProfileProps): boolean {
     const photo = this.getPhoto(newProps.data?.photo);
@@ -60,7 +73,15 @@ class Profile extends Block {
   }
 
   init() {
-    const photo = this.getPhoto(this.props.data.photo);
+    let photo = defPhoto;
+    if (Store.getState()!=={} && Store.getState().user!==undefined){
+			photo = Store.getState().user.data.photo
+		}
+
+    const state = Store.getState()
+		console.log('Store = ', state)
+		console.log('Props= ', this.props)
+
 
     this.children.navbar = new Navbar({});
     this.children.avatar = new UploadFile({

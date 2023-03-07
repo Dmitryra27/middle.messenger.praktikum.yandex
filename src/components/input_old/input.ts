@@ -15,7 +15,7 @@ interface InputProps {
 	className?: string;
 	minLength?: number;
 	maxLength?: number;
-	events?: any;
+	events?: Event;
 	value?:any|null;
 }
 

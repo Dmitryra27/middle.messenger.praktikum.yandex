@@ -11,9 +11,19 @@ import { state } from "../../types/types";
 
 import defPhoto from "../../../static/img/Photo.png";
 import { Link } from "../link";
+import Store from "../../store/Store";
 
 interface NavbarProps {
   photo?: string,
+}
+
+function getPhotoNew(mockFoto:string) {
+	if(Store.getState()!=={} && Store.getState().user.data.photo!==undefined ){
+			return Store.getState().user.data.photo
+		}else{
+			return mockFoto
+	}
+
 }
 
 class Navbar extends Block {
@@ -22,7 +32,12 @@ class Navbar extends Block {
   }
 
   getPhoto(photo: string | undefined) {
-    return photo || defPhoto;
+  	if (photo===undefined){
+  		return defPhoto
+		}else{
+			return photo
+		}
+
   }
 
   protected componentDidUpdate(_oldProps: NavbarProps, newProps: NavbarProps): boolean {
@@ -34,6 +49,8 @@ class Navbar extends Block {
   }
 
   init() {
+
+
     this.children.logout = new ButtonIcon({
       label: "Выйти",
       icon: logoutIcon,
@@ -68,6 +85,6 @@ class Navbar extends Block {
   }
 }
 
-const withNavbar = withStore((state: state) => (state.user.data) || {photo: defPhoto});
+const withNavbar = withStore((state: state) => (state) ||({photo: getPhotoNew(defPhoto)}));
 
 export default withNavbar(Navbar);

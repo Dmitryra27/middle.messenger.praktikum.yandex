@@ -107,11 +107,18 @@ export default class Block {
       if (Array.isArray(component)) {
         contextAndStubs[name] = component.map(child => getStub(child.id));
       } else {
-        contextAndStubs[name] = getStub(component.id);
-      }
+      	if (component!==undefined){
+					//console.log('component if= ', component)
+					contextAndStubs[name] = getStub(component.id);
+      	}else{
+					console.log('component in Block else= ', component)
+					contextAndStubs[name] = getStub(this.id);
+				}
+			}
+
     });
 
-    const html = template(contextAndStubs);
+    const html = template(contextAndStubs);//template(contextStub);
     const temp = document.createElement("template");
     temp.innerHTML = html;
 
@@ -131,7 +138,11 @@ export default class Block {
       if (Array.isArray(component)) {
         component.forEach(replaceStub);
       } else {
-        replaceStub(component);
+				if (component!==undefined) {
+					replaceStub(component);
+				}else{
+					return;
+				}
       }
     });  
   
