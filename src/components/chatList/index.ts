@@ -121,6 +121,7 @@ class ChatList extends Block {
       submit: new Button({
         label: "Ok",
         events: {
+        	//@ts-ignore
           click: (e: Event) => {
             this.addChat(e);
           }

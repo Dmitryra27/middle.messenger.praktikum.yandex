@@ -13,8 +13,9 @@ import FormInput from "../../../../components/formInput";
 import Router from "../../../../router/Router";
 import Store from "../../../../store/Store";
 import ErrorText from "../../../../components/errorText";
+//import {ProfileProps} from "../../index";
 
-interface EditProfileProps {
+export interface EditProfileProps {
   changeContent: (content: Content) => void,
   email: string,
   login: string,
@@ -22,6 +23,7 @@ interface EditProfileProps {
   second_name: string,
   display_name: string,
   phone: string,
+	isUserLoading?:boolean
 }
 
 export default class EditProfile extends Block {

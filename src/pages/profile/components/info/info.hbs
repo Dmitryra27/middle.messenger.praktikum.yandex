@@ -1,4 +1,7 @@
 <div class="{{styles.info-list}}">
+{{#if isUserLoading}}
+        <div>Loading...</div>
+{{else}}
   <ul>
     <li class="{{styles.list-item}}">
       <p class="{{styles.title}}">E-mail</p>
@@ -25,7 +28,9 @@
       <p class="{{styles.info}}">{{phone}}</p>
     </li>
   </ul>
-  <div class="{{styles.btns}}">
+{{/if}}
+  <div class="{{styles.btn}}">
+
     {{{editProfile}}}
     {{{changePassword}}}
   </div>

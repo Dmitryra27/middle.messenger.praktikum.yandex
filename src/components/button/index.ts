@@ -6,7 +6,7 @@ interface ButtonProps {
   label: string,
   type?: string,
   events: {
-    click: (e: unknown) => void,
+    click: (e: Event|PointerEvent) => void,
   }, 
   propStyle?: string,
   secondary?: boolean,

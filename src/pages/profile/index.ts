@@ -13,79 +13,87 @@ import withStore from "../../hocs/withStore";
 import UploadFile from "../../components/uploadFile";
 import ProfileController from "../../controlles/ProfileController";
 import AuthController from "../../controlles/AuthController";
+import getPhotoNew from "../../utils/getPhotoNew";
 import Store from "../../store/Store";
 
-interface ProfileProps {
-  data?: Record<string, string>;
+export interface ProfileProps {
+	isUserLoading:boolean;
+  data: Record<string, string>;
   content: Content;
+
 }
 
 class Profile extends Block {
 
-  constructor(props?: ProfileProps) {
+  constructor(props: ProfileProps) {
     super(props);
+    this.props = props
   }
 
-  private displayName() {
+	private displayName() {
   	try {
-			if (Store.getState()!=={} && Store.getState().user.data.first_name!==undefined){
-
-				const {display_name} = this.props.data;
-				return display_name ? display_name : Store.getState().user.first_name;
-			}
-  	}catch (e) {
+			const {display_name, first_name} = this.props.data;
+			return display_name ? display_name : first_name;
+		}catch (e) {
 			return 'Мишка'
 		}
-  }
 
-  private createContent() {
+		}
 
-    if (this.props.content === Content.EditProfile) {
-      return new EditProfile({
-          ...this.props.data,
-          display_name: this.displayName()
-        });
-    } else if (this.props.content === Content.ChangePassword) {
-      return new ChangePassword();
-    } else {
-      return new Info({
-        ...this.props.data,
-        display_name: this.displayName()
-      });
-    }
-  }
+
+	private createContent(props: { isUserLoading: boolean; data: Record<string, string>; content: string }) {
+
+		if (props.content === Content.EditProfile) {
+			return new EditProfile({
+				...this.props.data,
+				display_name: this.displayName()
+			});
+		} else if (props.content === Content.ChangePassword) {
+			return new ChangePassword();
+		} else {
+			return new Info({
+				...this.props.data,
+				display_name: this.displayName()
+			});
+		}
+	}
 
 	getPhoto(photo: string | undefined) {
-		if (photo===undefined){
+  	try{
+			if (photo===undefined){
+				return defPhoto
+			}else{
+				return photo
+			}
+		}catch (e){
 			return defPhoto
-		}else{
-			return photo
 		}
+
 
 	}
 
   protected componentDidUpdate(_oldProps: ProfileProps, newProps: ProfileProps): boolean {
-    const photo = this.getPhoto(newProps.data?.photo);
+    const photo = getPhotoNew(newProps.data?.photo);
 
     (this.children.avatar as Block).setProps({photo});
+    (this.children.content as Block).setProps({ data:newProps.data});
 
     return false;
   }
 
   init() {
-    let photo = defPhoto;
-    if (Store.getState()!=={} && Store.getState().user!==undefined){
-			photo = Store.getState().user.data.photo
+
+  	console.log('Store.user in start Init = ', Store.getState().user)
+  	let photo;
+  	try {
+			photo = this.props.data.photo
+		}catch (e) {
+			photo = defPhoto
 		}
-
-    const state = Store.getState()
-		console.log('Store = ', state)
-		console.log('Props= ', this.props)
-
 
     this.children.navbar = new Navbar({});
     this.children.avatar = new UploadFile({
-      photo,
+      photo:photo,
       events: {
         req: async (data: FormData) => {
           await ProfileController.changeAvatar(data);
@@ -93,11 +101,24 @@ class Profile extends Block {
         }
       }
     });
+
+		this.children.content = this.createContent({isUserLoading:true, content:'', data: {}});
+		(this.children.content as Block).setProps({isUserLoading: true});
+
+		AuthController.fetchUser().finally(() => {
+			(this.children.content as Block).setProps({content:this.props.content});
+			(this.children.content as Block).setProps({data: Store.getState().user.data});
+			(this.children.content as Block).setProps({isUserLoading: false});
+
+			console.log('Store.user in Init finally = ', Store.getState().user)
+		});
+
+
   }
 
-  render() {   
-    this.children.content = this.createContent();
-    return this.compile(template, {...this.props, styles, name: this.displayName()});
+  render() {
+  	console.log('props in render = ',this.props)
+    return this.compile(template, {...this.props,  styles, name: this.displayName()});
   }
 }
 

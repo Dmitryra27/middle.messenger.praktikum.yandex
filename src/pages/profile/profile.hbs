@@ -1,9 +1,17 @@
 <main>
+{{#if isUserLoading}}
+        <div>Loading...</div>
+{{else}}
   {{{navbar}}}
+{{/if}}
   <div class="{{styles.container}}">
-    {{{avatar}}}
-    <span class={{styles.name}}>{{name}}</span>
-    {{{content}}}
+    {{#if isUserLoading}}
+        <div>Loading...</div>
+    {{else}}
+        {{{avatar}}}
+        <span class={{styles.name}}>{{name}}</span>
+        {{{content}}}
+    {{/if}}
   </div>
 </main>
 

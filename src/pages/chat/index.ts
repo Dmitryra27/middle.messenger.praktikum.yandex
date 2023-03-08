@@ -22,7 +22,7 @@ export default class ChatPage extends Block {
 
   init() {
     const state = Store.getState();
-    console.log('Store = ', state)
+    console.log('Store in Chat= ', state)
     this.children.chatList = new ChatList({chats: {isLoading: true}});
     this.children.chat = new ChatWindow({});
 
