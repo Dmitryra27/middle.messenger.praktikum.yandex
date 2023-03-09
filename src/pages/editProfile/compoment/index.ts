@@ -1,18 +1,18 @@
-import Block from "../../../../core/Block";
+import Block from "../../../core/Block";
 import template from "./editProfile.hbs";
-import Button from "../../../../components/button";
-import { Content } from "../../../../types/types";
+import Button from "../../../components/button";
+import { Content } from "../../../types/types";
 
-import validateInput, {validate} from "../../../../utils/validateInput";
-import validationForm from "../../../../utils/validationForm";
+import validateInput, {validate} from "../../../utils/validateInput";
+import validationForm from "../../../utils/validationForm";
 
 import * as styles from "./editProfile.module.scss";
-import ProfileController from "../../../../controlles/ProfileController";
-import { ProfileData } from "../../../../types/interfaces";
-import FormInput from "../../../../components/formInput";
-import Router from "../../../../router/Router";
-import Store from "../../../../store/Store";
-import ErrorText from "../../../../components/errorText";
+import ProfileController from "../../../controlles/ProfileController";
+import { ProfileData } from "../../../types/interfaces";
+import FormInput from "../../../components/formInput";
+import Router from "../../../router/Router";
+import Store from "../../../store/Store";
+import ErrorText from "../../../components/errorText";
 //import {ProfileProps} from "../../index";
 
 export interface EditProfileProps {

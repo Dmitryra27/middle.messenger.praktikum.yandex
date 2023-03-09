@@ -8,26 +8,22 @@
 
 .input {
   width: 100%;
-  margin-bottom: 15px;
-}
-
-.save {
-  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .error {
   margin-top: 5px;
-  color: var(--color-red);
+  color: var(--danger);
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 }
 
+.btn {
+  margin: 20px 10px 0;
+}
+
 .btns {
   display: flex;
   flex-direction: column;
-}
-
-.btn {
-  margin: 20px 10px 0;
 }

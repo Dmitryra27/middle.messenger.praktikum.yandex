@@ -1,19 +1,19 @@
-import Block from "../../../../core/Block";
+import Block from "../../../core/Block";
 import template from "./changePassword.hbs";
-import Button from "../../../../components/button";
+import Button from "../../../components/button";
 
-import validateInput, {validate} from "../../../../utils/validateInput";
-import validationForm from "../../../../utils/validationForm";
+import validateInput, {validate} from "../../../utils/validateInput";
+import validationForm from "../../../utils/validationForm";
 
 import * as styles from "./changePassword.module.scss";
-import ProfileController from "../../../../controlles/ProfileController";
-import { PasswordData } from "../../../../types/interfaces";
-import FormInput from "../../../../components/formInput";
-import Router from "../../../../router/Router";
-import Store from "../../../../store/Store";
-import ErrorText from "../../../../components/errorText";
+import ProfileController from "../../../controlles/ProfileController";
+import { PasswordData } from "../../../types/interfaces";
+import FormInput from "../../../components/formInput";
+import Router from "../../../router/Router";
+import Store from "../../../store/Store";
+import ErrorText from "../../../components/errorText";
 
-interface ChangePasswordProps {}
+export interface ChangePasswordProps {}
 
 export default class ChangePassword extends Block {
   private oldPassword!: validate;

@@ -1,8 +1,11 @@
-<main>
+<main class="{{styles.profile_main}}">
 {{#if isUserLoading}}
         <div>Loading...</div>
 {{else}}
-  {{{navbar}}}
+    <div>
+        {{{navbar}}}
+    </div>
+
 {{/if}}
   <div class="{{styles.container}}">
     {{#if isUserLoading}}
@@ -10,8 +13,13 @@
     {{else}}
         {{{avatar}}}
         <span class={{styles.name}}>{{name}}</span>
-        {{{content}}}
+        {{{info}}}
     {{/if}}
   </div>
+    <div class="{{styles.btns}}">
+
+        {{{editProfile}}}
+        {{{changePassword}}}
+    </div>
 </main>
 

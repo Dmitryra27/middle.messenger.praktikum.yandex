@@ -4,12 +4,13 @@ import Auth from "../src/pages/auth";
 import Profile from "../src/pages/profile";
 import Chat from "../src/pages/chat";
 import AuthController from "../src/controlles/AuthController";
-import { Content } from "../src/types/types";
+//import { Content } from "../src/types/types";
 import "../src/controlles/MessageController";
 import Store from "../src/store/Store";
 import {NotFoundPage} from "../src/pages/notFound";
 import {ServerErrorPage} from "../src/pages/serverError";
-
+import EditProfilePage from "../src/pages/editProfile";
+import EditPasswordPage from "../src/pages/editPassword/editPasswordPage";
 
 enum Routes {
   Start = "/",
@@ -17,8 +18,8 @@ enum Routes {
   Page404 = "/page404",
   Page500 = "/page500",
   Profile = "/settings",
-  ProfileInfo = "/settings/info",
-  ProfilePassword = "/settings/password",
+  EditProfile = "/editSettings",
+  EditPassword = "/editPassword",
   Chat = "/messenger",
 }
 
@@ -28,9 +29,11 @@ window.addEventListener("DOMContentLoaded", async ()=> {
 		.use(Routes.Signup, Auth)
     .use(Routes.Page404, NotFoundPage)
     .use(Routes.Page500, ServerErrorPage)
-    .use(Routes.Profile, Profile, {content: Content.Info})
-    .use(Routes.ProfileInfo, Profile, {content: Content.EditProfile})
-    .use(Routes.ProfilePassword, Profile, {content: Content.ChangePassword})
+		.use(Routes.Page404, NotFoundPage)
+		.use(Routes.Page500, ServerErrorPage)
+    .use(Routes.Profile, Profile, )
+    .use(Routes.EditProfile, EditProfilePage )
+    .use(Routes.EditPassword, EditPasswordPage)
     .use(Routes.Chat, Chat)
 
     let isProtectedRoute = true;

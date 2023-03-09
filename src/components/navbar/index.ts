@@ -50,9 +50,6 @@ class Navbar extends Block {
 				img: this.getPhoto(defPhoto),
 			});
 		}
-
-
-
     return false;
   }
 

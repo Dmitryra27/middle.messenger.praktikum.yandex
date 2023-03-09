@@ -1,10 +1,9 @@
 import Block from "../../core/Block";
 import template from "./profile.hbs";
 import Navbar from "../../components/navbar";
-import EditProfile from "./components/editProfile";
-import ChangePassword from "./components/changePassword";
+
 import Info from "./components/info";
-import { Content, state } from "../../types/types";
+import {  state } from "../../types/types";
 
 import * as styles from "./profile.module.scss";
 
@@ -14,49 +13,48 @@ import UploadFile from "../../components/uploadFile";
 import ProfileController from "../../controlles/ProfileController";
 import AuthController from "../../controlles/AuthController";
 import getPhotoNew from "../../utils/getPhotoNew";
+import Button from "../../components/button";
+import Router from "../../router/Router";
 import Store from "../../store/Store";
+
+
 
 export interface ProfileProps {
 	isUserLoading:boolean;
   data: Record<string, string>;
-  content: Content;
+ }
 
-}
-
-class Profile extends Block {
+ //export default
+ class Profile extends Block {
 
   constructor(props: ProfileProps) {
     super(props);
-    this.props = props
+    //this.props = props
   }
 
-	private displayName() {
-  	try {
-			const {display_name, first_name} = this.props.data;
-			return display_name ? display_name : first_name;
+	 private displayName() {
+  	try{
+			const {display_name} = this.props.data;
+			return display_name
 		}catch (e) {
-			return 'Мишка'
+			console.log('No display_name in props')
+		}
+		try{
+			const {first_name} = this.props.data;
+			return first_name
+		}catch (e) {
+			console.log('No first_name in props')
+		}
+		let name ='Введите Имя в Чате';
+		try {
+			name = Store.getState().user.data.first_name
+			return name
+		}catch (e) {
+			return name
 		}
 
-		}
 
-
-	private createContent(props: { isUserLoading: boolean; data: Record<string, string>; content: string }) {
-
-		if (props.content === Content.EditProfile) {
-			return new EditProfile({
-				...this.props.data,
-				display_name: this.displayName()
-			});
-		} else if (props.content === Content.ChangePassword) {
-			return new ChangePassword();
-		} else {
-			return new Info({
-				...this.props.data,
-				display_name: this.displayName()
-			});
-		}
-	}
+	 }
 
 	getPhoto(photo: string | undefined) {
   	try{
@@ -76,14 +74,14 @@ class Profile extends Block {
     const photo = getPhotoNew(newProps.data?.photo);
 
     (this.children.avatar as Block).setProps({photo});
-    (this.children.content as Block).setProps({ data:newProps.data});
+    (this.children.info as Block).setProps({ data:newProps});
 
     return false;
   }
 
   init() {
 
-  	console.log('Store.user in start Init = ', Store.getState().user)
+
   	let photo;
   	try {
 			photo = this.props.data.photo
@@ -101,16 +99,33 @@ class Profile extends Block {
         }
       }
     });
+		this.children.editProfile = new Button({
+			label: "Редактировать",
+			events: {
+				click: () => {
+					Router.go("/editSettings");;
+				}
+			},
+			propStyle: styles.btn
+		});
+		this.children.changePassword = new Button({
+			label: "Сменить пароль",
+			events: {
+				click: () => {
+					Router.go("/editPassword");
+				}
+			},
+			propStyle: styles.btn
+		});
 
-		this.children.content = this.createContent({isUserLoading:true, content:'', data: {}});
-		(this.children.content as Block).setProps({isUserLoading: true});
+		this.children.info = new Info({...this.props.data});
+		(this.children.info as Block).setProps({isUserLoading: true});
 
 		AuthController.fetchUser().finally(() => {
-			(this.children.content as Block).setProps({content:this.props.content});
-			(this.children.content as Block).setProps({data: Store.getState().user.data});
-			(this.children.content as Block).setProps({isUserLoading: false});
 
-			console.log('Store.user in Init finally = ', Store.getState().user)
+			(this.children.info as Block).setProps({...this.props.data});
+			(this.children.info as Block).setProps({isUserLoading: false});
+
 		});
 
 
@@ -118,7 +133,7 @@ class Profile extends Block {
 
   render() {
   	console.log('props in render = ',this.props)
-    return this.compile(template, {...this.props,  styles, name: this.displayName()});
+    return this.compile(template, {...this.props,first_name:'Mike', styles, name: this.displayName()});
   }
 }
 
