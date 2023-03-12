@@ -1,0 +1,33 @@
+<div class="{{styles.info-list}}">
+{{#if isUserLoading}}
+        <div>Loading...</div>
+{{else}}
+  <ul>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Почта</p>
+      <p class="{{styles.info}}">{{email}}</p>
+    </li>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Логин</p>
+      <p class="{{styles.info}}">{{login}}</p>
+    </li>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Имя</p>
+      <p class="{{styles.info}}">{{first_name}}</p>
+    </li>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Фамилия</p>
+      <p class="{{styles.info}}">{{second_name}}</p>
+    </li>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Имя в Чате</p>
+      <p class="{{styles.info}}">{{display_name}}</p>
+    </li>
+    <li class="{{styles.list-item}}">
+      <p class="{{styles.title}}">Телефон</p>
+      <p class="{{styles.info}}">{{phone}}</p>
+    </li>
+  </ul>
+{{/if}}
+
+</div>

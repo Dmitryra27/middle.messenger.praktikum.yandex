@@ -1,0 +1,66 @@
+:root {
+    --red_link_a:#FF0000;
+    --danger: #FF2F2F;
+
+    --white: #ffffff;
+    --light: #e2e8f0;
+    --dialog:#E4EDFD;
+    --lightGrey: #ced5da;
+    --transparent: #999999;
+    --label:#999999;
+    --darkGrey: #496373;
+
+    --darkBlue:#3369F3;
+    --button-background:#3369F3;
+
+    --black: #1E1E1E;
+
+    --valid: #0c5d00;
+
+    --navbar-height:50px;
+}
+
+@font-face {
+    font-family: Inter,sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    width: 95%;
+    background-color: var(--white);
+    font-family: Inter,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0;
+    text-align: left;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-weight: 300;
+}
+
+
