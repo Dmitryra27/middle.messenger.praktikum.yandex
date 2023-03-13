@@ -1,16 +1,17 @@
-import Router from "../src/router/Router";
+import Store from "./store/Store";
+import Router from "./router/Router";
 
-import Auth from "../src/pages/auth";
-import Profile from "../src/pages/profile";
-import Chat from "../src/pages/chat";
-import AuthController from "../src/controlles/AuthController";
-//import { Content } from "../src/types/types";
-import "../src/controlles/MessageController";
-import Store from "../src/store/Store";
-import {NotFoundPage} from "../src/pages/notFound";
-import {ServerErrorPage} from "../src/pages/serverError";
-import EditProfilePage from "../src/pages/editProfile";
-import EditPasswordPage from "../src/pages/editPassword/editPasswordPage";
+import Auth from "./pages/auth";
+import Profile from "./pages/profile";
+import Chat from "./pages/chat";
+import AuthController from "./controlles/AuthController";
+
+import "./controlles/MessageController";
+
+import {NotFoundPage} from "./pages/notFound";
+import {ServerErrorPage} from "./pages/serverError";
+import EditProfilePage from "./pages/editProfile";
+import EditPasswordPage from "./pages/editPassword/editPasswordPage";
 
 enum Routes {
   Start = "/",
@@ -48,7 +49,7 @@ window.addEventListener("DOMContentLoaded", async ()=> {
 
 		try{
 			await AuthController.fetchUser();
-		}catch (e) {
+		}catch (e:any) {
     	if (e.reason === 'User already in system'){
 				console.log('Пользователь уже в системе ',e.reason)
 				Router.go(Routes.Chat);

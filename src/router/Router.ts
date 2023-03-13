@@ -53,6 +53,11 @@ class Router {
     this._onRoute(pathname);
   }
 
+	public reset() {
+		this.routes = [];
+		this._currentRoute = null;
+	}
+
   public back() {
     this.history.back();
   }

@@ -38,14 +38,14 @@ class Navbar extends Block {
 				(this.children.profile as Block).setProps({
 					img: this.getPhoto(newProps.photo),
 				});
-			} else if (Store.getState()!=={} && Store.getState().user.data.photo!==undefined){
+			} else if ( Store.getState().user.data.photo!=='undefined'){
 				(this.children.profile as Block).setProps({
 					img: this.getPhoto(Store.getState().user.data.photo),
 				});
 			} else{(this.children.profile as Block).setProps({
 				img: this.getPhoto(defPhoto),
 			});}
-		}catch (e) {
+		}catch (e:any) {
 			(this.children.profile as Block).setProps({
 				img: this.getPhoto(defPhoto),
 			});
