@@ -36,8 +36,21 @@
 
 ### Используемый стек технологий
 
-HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter, babel
+HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter, babel, Webpack
 
 ### Netlify
 
 [Сайт на хостинге netlify.com](https://dreamy-cassata-053c4c.netlify.app/)
+
+###Запуск тестов
+
+npm run test
+
+###Precommit. 
+
+Установка хука husky - Git:
+npm run prepare
+
+###Docker
+
+docker build -t messenger . docker run -dp 3000:3000 messenger
