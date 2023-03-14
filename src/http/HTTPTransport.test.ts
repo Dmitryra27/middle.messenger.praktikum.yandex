@@ -3,56 +3,56 @@ import HTTPTransport from './HTTPTransport';
 import { expect } from 'chai';
 
 describe('HTTPTransport', () => {
-	let xhr: SinonFakeXMLHttpRequestStatic;
-	let instance: HTTPTransport;
-	const requests: SinonFakeXMLHttpRequest[] = [];
+  let xhr: SinonFakeXMLHttpRequestStatic;
+  let instance: HTTPTransport;
+  const requests: SinonFakeXMLHttpRequest[] = [];
 
-	beforeEach(() => {
-		xhr = sinon.useFakeXMLHttpRequest();
+  beforeEach(() => {
+    xhr = sinon.useFakeXMLHttpRequest();
 
-		// @ts-ignore
-		global.XMLHttpRequest = xhr;
+    // @ts-ignore
+    global.XMLHttpRequest = xhr;
 
-		xhr.onCreate = ((request: SinonFakeXMLHttpRequest) => {
-			requests.push(request);
-		});
+    xhr.onCreate = ((request: SinonFakeXMLHttpRequest) => {
+      requests.push(request);
+    });
 
-		instance = new HTTPTransport('/auth');
-	});
+    instance = new HTTPTransport('/auth');
+  });
 
-	afterEach(() => {
-		requests.length = 0;
-	})
+  afterEach(() => {
+    requests.length = 0;
+  })
 
-	it('.get() should send GET request', () => {
-		instance.get('/user');
+  it('.get() should send GET request', () => {
+    instance.get('/user');
 
-		const [request] = requests;
+    const [request] = requests;
 
-		expect(request.method).to.eq('GET');
-	});
+    expect(request.method).to.eq('GET');
+  });
 
-	it('.post() should send POST request', () => {
-		instance.post('/chats');
+  it('.post() should send POST request', () => {
+    instance.post('/chats');
 
-		const [request] = requests;
+    const [request] = requests;
 
-		expect(request.method).to.eq('POST');
-	});
+    expect(request.method).to.eq('POST');
+  });
 
-	it('.put() should send PUT request', () => {
-		instance.put('/chats/users');
+  it('.put() should send PUT request', () => {
+    instance.put('/chats/users');
 
-		const [request] = requests;
+    const [request] = requests;
 
-		expect(request.method).to.eq('PUT');
-	});
+    expect(request.method).to.eq('PUT');
+  });
 
-	it('.delete() should send DELETE request', () => {
-		instance.delete('/chats/users');
+  it('.delete() should send DELETE request', () => {
+    instance.delete('/chats/users');
 
-		const [request] = requests;
+    const [request] = requests;
 
-		expect(request.method).to.eq('DELETE');
-	});
+    expect(request.method).to.eq('DELETE');
+  });
 });

@@ -1,20 +1,19 @@
-const express = require('express');
-const path = require('path');
+require("dotenv").config();
+const express = require("express");
+const fallback = require("express-history-api-fallback");
+const path = require("path");
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static('./dist'));
+const root = __dirname + "/dist";
+app.use(express.static(root));
+app.use(fallback('index.html', { root: root}))
 
-app.use('/*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
-
-app.use((req, res, next) => {
-	res.setHeader('Content-Security-Policy', "default-src 'self'");
-	next();
+app.use("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
 app.listen(PORT, () => {
-	console.log(`Example app listening on port ${PORT}!`);
-});
-
+  console.log(`Server started on port ${PORT}`);
+}); 

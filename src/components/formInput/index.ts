@@ -1,9 +1,9 @@
 import Block from "../../core/Block";
 import {validate, validEvents} from "../../utils/validateInput";
-import ErrorInput from "../errorInput";
+import ErrorInput from "../ErrorInput";
 import Input from "../input";
 import template from "./formInput.hbs";
-import * as styles from "./formInput.module.scss";
+import {default as styles} from "./formInput.module.scss";
 
 interface FormInputProps {
   label?: string,

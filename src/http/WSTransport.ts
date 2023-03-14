@@ -1,5 +1,5 @@
 import { Message } from "../types/interfaces";
-import EventBus from "../core/EventBus";
+import { EventBus } from "../core/EventBus";
 
 type SocketEvents = {
   "connected": [],

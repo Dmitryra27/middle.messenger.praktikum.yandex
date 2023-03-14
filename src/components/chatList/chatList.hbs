@@ -1,10 +1,10 @@
-<div class="chats">
+<div class="{{styles.chats}}">
   <div>
     {{{search}}}
     {{#if isLoading}}
-    <div>Loading...</div>
+    Loading...
     {{else}}
-    <ul class="chat-list">
+    <ul class="{{styles.chat-list}}">
       {{#each chats}}
       {{{this}}}
       {{/each}}

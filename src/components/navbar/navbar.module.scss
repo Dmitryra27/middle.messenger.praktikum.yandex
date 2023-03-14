@@ -1,7 +1,6 @@
 .navbar {
   height: var(--navbar-height);
   box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
-  width: 100%;
 
   .photo {
     width: 32px;
@@ -26,11 +25,10 @@
       display: flex;
       align-items: center;
       margin-left: 40px;
-
-      list-style-type:none;
+      cursor: pointer;
 
       span {
-        color: var(--darkGrey);
+        color: var(--color-grey-dark);
         font-weight: 700;
         font-size: 14px;
         line-height: 20px;
@@ -50,7 +48,4 @@
       border: none;
     }
   }
-}
-li{
-  list-style-type:none;
 }

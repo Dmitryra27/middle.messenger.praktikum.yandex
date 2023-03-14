@@ -37,9 +37,9 @@ export default function validation(value: string, name: string): string {
       if (!value) {
         return "Required";
       } else if(!/^[a-zA-Z0-9_-]{3,20}$/g.test(value)) {
-        return "login must be 3 to 20 characters and contain numbers, letters, -, _";
+        return "Login must be 3 to 20 characters and contain numbers, letters, -, _"; 
       } else if (!/[\D]/.test(value)) {
-        return "login mustn't only contain numbers";
+        return "Login mustn't only contain numbers";
       } 
       break; 
     case "phone":

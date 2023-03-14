@@ -40,7 +40,7 @@ class AuthController {
       const user = await this.api.read();
 
       Store.set("user.data", user);
-    	console.log('AuthController set user.data in Store', user)
+    
       if (user.avatar) {
         const photo = `${HTTPTransport.API_URL}/resources${user.avatar}`;
         Store.set("user.data.photo", photo);

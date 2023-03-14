@@ -1,14 +1,12 @@
 import Block from "../../core/Block";
 import template from "./signin.hbs";
-//@ts-ignore
-import * as styles from "./styles.module.scss";
 import Button from "../../components/button";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 import AuthController from "../../controlles/AuthController";
 import { SigninData } from "../../types/interfaces";
-import FormInput from "../../components/formInput";
+import FormInput from "../../components/FormInput";
 import ErrorText from "../../components/errorText";
 import Store from "../../store/Store";
 
@@ -25,7 +23,7 @@ export default class Signin extends Block {
     super(props);
   }
 
-  async auth(e: Event|PointerEvent) {
+  async auth(e: Event) {
     const data = this.onSubmit(e);
 
     if (data) { 
@@ -44,25 +42,24 @@ export default class Signin extends Block {
     this.password = validateInput("", "password");
 
     this.children.login = new FormInput({
-      label: "Логин",
+      label: "Login",
       type: "text",
       name: "login",
-      placeholder: "Введите логин",
-      validation: this.login,
-			propStyle:'signin_form'
+      placeholder: "Enter your login",
+      validation: this.login, 
     });
     this.children.password = new FormInput({
-      label: "Пароль",
+      label: "Password",
       type: "password",
       name: "password", 
-      placeholder: "Введите пароль",
+      placeholder: "Enter your password",
       validation: this.password,   
     });
     this.children.button = new Button({
-      label: "Войти",
+      label: "Sign in",
       type: "submit",
       events: {
-        click: (e) => {
+        click: (e: PointerEvent) => {
           this.auth(e);
         }
       }, 
@@ -73,6 +70,6 @@ export default class Signin extends Block {
 
   render() {
     return this.compile(template, 
-      {...this.props });
+      {...this.props});
   }
 }

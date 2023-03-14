@@ -1,5 +1,61 @@
 import Block from "../core/Block";
-import Route from './Route'
+
+function isEqual(lhs: string, rhs: string): boolean {
+  return lhs === rhs;
+}
+
+function render(query: string, block: Block) {
+  const root = document.querySelector(query);
+
+  if (root === null) {
+    throw new Error(`Not found selector ${query}`);
+  }
+
+  root.innerHTML = "";
+  root.append(block.getContent()!);
+
+  return root;
+}
+
+class Route {
+  private _block: Block | null = null;
+  private _blockClass: typeof Block;
+  private _pathname: string;
+  private _props: Record<string, any>;
+
+  constructor(pathname: string, view: typeof Block, props: Record<string, any>) {
+    this._pathname = pathname;
+    this._blockClass = view;
+    this._props = props;
+  }
+
+  navigate(pathname: string) {
+    if (this.match(pathname)) {
+      this._pathname = pathname;
+      this.render();
+    }
+  }
+
+  leave() {
+    if (this._block) {
+      this._block = null;
+    }
+  }
+
+  match(pathname: string) {
+    return isEqual(pathname, this._pathname);
+  }
+
+  render() {
+    if (!this._block) {
+      this._block = new this._blockClass(this._props);
+      render(this._props.rootQuery, this._block);
+      return;
+    }
+
+    this._block.show();
+  }
+}
 
 class Router {
   private static __instance: Router;
@@ -33,6 +89,11 @@ class Router {
     this._onRoute(window.location.pathname);
   }
 
+  public reset() {
+    this.routes = [];
+    this._currentRoute = null;
+  }
+
   private _onRoute(pathname: string) {
     const route = this.getRoute(pathname);
 
@@ -53,11 +114,6 @@ class Router {
     this._onRoute(pathname);
   }
 
-	public reset() {
-		this.routes = [];
-		this._currentRoute = null;
-	}
-
   public back() {
     this.history.back();
   }
@@ -71,5 +127,5 @@ class Router {
   }
 }
 
-export default new Router("#root");
+export default new Router("#app");
 

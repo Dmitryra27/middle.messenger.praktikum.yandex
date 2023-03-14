@@ -1,6 +1,6 @@
 import Block from "../../core/Block";
 import template from "./navbar.hbs";
-import * as styles from "./navbar.module.scss";
+import {default as styles} from "./navbar.module.scss";
 
 import messageIcon from "../../../static/icons/message_circle.svg";
 import logoutIcon from "../../../static/icons/log_out.svg";
@@ -11,8 +11,6 @@ import { state } from "../../types/types";
 
 import defPhoto from "../../../static/img/Photo.png";
 import { Link } from "../link";
-import Store from "../../store/Store";
-import getPhotoNew from "../../utils/getPhotoNew";
 
 interface NavbarProps {
   photo?: string,
@@ -24,39 +22,20 @@ class Navbar extends Block {
   }
 
   getPhoto(photo: string | undefined) {
-  	if (photo===undefined){
-  		return defPhoto
-		}else{
-			return photo
-		}
-
+    return photo || defPhoto;
   }
 
   protected componentDidUpdate(_oldProps: NavbarProps, newProps: NavbarProps): boolean {
-  	try{
-			if (newProps.photo!==undefined){
-				(this.children.profile as Block).setProps({
-					img: this.getPhoto(newProps.photo),
-				});
-			} else if ( Store.getState().user.data.photo!=='undefined'){
-				(this.children.profile as Block).setProps({
-					img: this.getPhoto(Store.getState().user.data.photo),
-				});
-			} else{(this.children.profile as Block).setProps({
-				img: this.getPhoto(defPhoto),
-			});}
-		}catch (e:any) {
-			(this.children.profile as Block).setProps({
-				img: this.getPhoto(defPhoto),
-			});
-		}
+    (this.children.profile as Block).setProps({
+      img: this.getPhoto(newProps.photo),
+    });
+
     return false;
   }
 
   init() {
-
     this.children.logout = new ButtonIcon({
-      label: "Выйти",
+      label: "Log out",
       icon: logoutIcon,
       alt: "Log out",
       type: "button",
@@ -69,14 +48,13 @@ class Navbar extends Block {
     });
     this.children.profile = new Link({
       img: this.getPhoto(this.props.photo),
-      label: "Профиль",
+      label: "Profile",
       to: "/settings",
       styleImg: styles.photo,
     });
-
     this.children.chat = new Link({
       img: messageIcon,
-      label: "Чат",
+      label: "Chat",
       to: "/messenger",
     });
   }
@@ -88,7 +66,7 @@ class Navbar extends Block {
       logoutIcon});
   }
 }
-//@ts-ignore
-const withNavbar = withStore((state: state) => ({photo: getPhotoNew(defPhoto)}));
+
+const withNavbar = withStore((state: state) => (state.user.data) || {photo: defPhoto});
 
 export default withNavbar(Navbar);

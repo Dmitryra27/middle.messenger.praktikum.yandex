@@ -1,7 +1,7 @@
 import Block from "../../core/Block";
 import template from "./errorText.hbs";
 
-import * as styles from "./errorText.module.scss";
+import {default as styles} from "./errorText.module.scss";
 
 interface ErrorTextProps {
   error?: string,

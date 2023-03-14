@@ -1,8 +1,8 @@
 import Block from "../../core/Block";
 import template from "./editProfilePage.hbs";
 
-import * as styles from "./editProfile.module.scss";
-
+//import * as styles from "./editProfile.module.scss";
+import {default as styles} from "./editProfile.module.scss";
 import EditProfile from "./compoment";
 import Navbar from "../../components/navbar";
 import UploadFile from "../../components/uploadFile";

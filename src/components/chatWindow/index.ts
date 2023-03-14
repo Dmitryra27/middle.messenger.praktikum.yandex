@@ -3,12 +3,12 @@ import Block from "../../core/Block";
 import ButtonIcon from "../buttonIcon";
 import Message from "../message";
 import template from "./chatWindow.hbs";
-import FormInput from "../formInput";
+import FormInput from "../FormInput";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 
-import * as styles from "./chatWindow.module.scss";
+import {default as styles} from "./chatWindow.module.scss";
 
 import searchIcon from "../../../static/icons/search.svg";
 import optionsIcon from "../../../static/icons/options.svg";
@@ -70,18 +70,18 @@ class ChatWindow extends Block {
     this.children.messages = this.createMessages(this.props as ChatWindowProps);
 
     this.children.searchChat = new ButtonIcon({
-      label: "Искать сообщение",
+      label: "Search message",
       icon: searchIcon,
       alt: "Search",
       events: {
-        click: () => console.log("Поиск")
+        click: () => console.log("search")
       },
       propStyle: styles.transp
     });
     this.children.options = new DropDown({
       active: this.activeOptions,
       button: new ButtonIcon({
-        label: "Меню",
+        label: "Options",
         icon: optionsIcon,
         alt: "Options",
         events: {
@@ -95,7 +95,7 @@ class ChatWindow extends Block {
       }),
       list: [
         new Button({
-        label: "Добавить друга",
+        label: "Add user",
         events: {
           click: () => {
             (this.children.modalAddUser as Block).setProps({active: true});
@@ -103,7 +103,7 @@ class ChatWindow extends Block {
         },
         }),
         new Button({
-          label: "Удалить пользователя",
+          label: "Remove user",
           events: {
             click: () => {
               (this.children.modalRemoveUser as Block).setProps({active: true});
@@ -111,7 +111,7 @@ class ChatWindow extends Block {
           },
         }),
         new Button({
-          label: "Удалить чат",
+          label: "Delete chat",
           events: {
             click: () => {
               (this.children.modalDeleteChat as Block).setProps({active: true});
@@ -119,7 +119,7 @@ class ChatWindow extends Block {
           },
         }),
         new Button({
-          label: "Сменить Аватар",
+          label: "Change avatar",
           events: {
             click: () => {
               (this.children.modalAvatar as Block).setProps({active: true });
@@ -131,12 +131,12 @@ class ChatWindow extends Block {
     this.children.message = new FormInput({
       type: "text",
       name: "message", 
-      placeholder: "Пишите сообщение...",
+      placeholder: "Type your message...",
       validation: this.message,
       propStyle: styles.message, 
     });
     this.children.send = new ButtonIcon({
-      label: "Послать",
+      label: "Send",
       icon: arrowRigth,
       alt: "Send",
       type: "submit",
@@ -176,16 +176,12 @@ class ChatWindow extends Block {
 
 const withChatWindow = withStore(state => {
   const chatId = state.selectedChat;
-  let userId:number|undefined = undefined;
-  if (state.user!==undefined) {
-  	state.user.data.id
-  }
 
   if (!chatId) {
     return {
       messages: [],
       selectedChat: undefined,
-      userId: userId,
+      userId: state.user.id,
       chatError: "",
     }
   }

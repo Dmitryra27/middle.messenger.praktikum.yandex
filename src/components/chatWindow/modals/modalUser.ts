@@ -1,13 +1,13 @@
 import Block from "../../../core/Block";
 import template from "./modal.hbs";
 
-import * as styles from "./modal.module.scss";
+import {default as styles} from "./modal.module.scss";
 import ChatController from "../../../controlles/ChatController";
 import Modal from "../../modal";
 import withStore from "../../../hocs/withStore";
 import validateInput, { validate } from "../../../utils/validateInput";
 import validationForm from "../../../utils/validationForm";
-import FormInput from "../../formInput";
+import FormInput from "../../FormInput";
 import Button from "../../button";
 import ProfileController from "../../../controlles/ProfileController";
 import Store from "../../../store/Store";
@@ -67,12 +67,12 @@ class BaseModal extends Block {
 
     this.children.modal = new Modal({
       active: false,
-      title: this.props.addUser ? "Добавить пользователя в чат": "Удалить из чата",
+      title: this.props.addUser ? "Add user to chat": "Remove user from chat",
       content: new FormInput({
-        label: "Логин Пользователя",
+        label: "User login",
         type: "text",
         name: "user_login", 
-        placeholder: "Введите Логин...",
+        placeholder: "Enter user login...",
         validation: this.user_login,
       }),
       submit: new Button({

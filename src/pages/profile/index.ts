@@ -5,7 +5,8 @@ import Navbar from "../../components/navbar";
 import Info from "./components/info";
 import {  state } from "../../types/types";
 
-import * as styles from "./profile.module.scss";
+//import * as styles from "./profile.module.scss";
+import {default as styles} from "./profile.module.scss";
 
 import defPhoto from "../../../static/img/Photo.png";
 import withStore from "../../hocs/withStore";
@@ -24,13 +25,12 @@ export interface ProfileProps {
   data: Record<string, string>;
  }
 
- //export default
+
  class Profile extends Block {
 
   constructor(props: ProfileProps) {
     super(props);
-    //this.props = props
-  }
+     }
 
 	 private displayName() {
   	try{
@@ -132,8 +132,8 @@ export interface ProfileProps {
   }
 
   render() {
-  	console.log('props in render = ',this.props)
-    return this.compile(template, {...this.props,first_name:'Mike', styles, name: this.displayName()});
+
+    return this.compile(template, {...this.props.datas, styles, name: this.displayName()});
   }
 }
 

@@ -1,12 +1,12 @@
 import Block from "../../core/Block";
 import template from "./button.hbs";
-import * as styles from "./button.module.scss";
+import {default as styles} from "./button.module.scss";
 
 interface ButtonProps {
   label: string,
   type?: string,
   events: {
-    click: (e: Event|PointerEvent) => void,
+    click: (e: any) => void,
   }, 
   propStyle?: string,
   secondary?: boolean,

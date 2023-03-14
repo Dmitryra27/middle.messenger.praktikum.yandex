@@ -8,12 +8,12 @@ import ChatItem from "../chatItem";
 import Input from "../input";
 import template from "./chatList.hbs";
 
-import * as styles from "./chatList.module.scss";
+import {default as styles} from "./chatList.module.scss";
 
 import plus from "../../../static/icons/plus.svg";
 import Modal from "../modal";
 import Button from "../button";
-import FormInput from "../formInput";
+import FormInput from "../FormInput";
 import validateInput, { validate } from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 
@@ -63,7 +63,7 @@ class ChatList extends Block {
     if (this.props.search) {
       chats = chats.filter(chat => chat.title.toLowerCase().includes(this.props.search));
     }
-		//@ts-ignore
+
     return chats.map(data => {
       return new ChatItem({
         photo: data.photo || defPhoto,
@@ -88,7 +88,7 @@ class ChatList extends Block {
     this.children.search = new Input({
       type: "text",
       name: "search", 
-      placeholder: "Поиск",
+      placeholder: "Search",
       events: {
         change: (e) => {
           Store.set("search", (e.target as HTMLInputElement).value.toLowerCase());
@@ -98,7 +98,7 @@ class ChatList extends Block {
     });
     
     this.children.newChat = new ButtonIcon({
-      label: "Создать чат",
+      label: "Add chat",
       icon: plus,
       alt: "Plus",
       events: {
@@ -110,9 +110,9 @@ class ChatList extends Block {
     });
     this.children.modal = new Modal({
       active: false,
-      title: "Создать чат",
+      title: "Create chat",
       content: new FormInput({
-        label: "chat name",
+        label: "Chat name",
         type: "text",
         name: "chat_name", 
         placeholder: "Enter chat name...",
@@ -121,7 +121,6 @@ class ChatList extends Block {
       submit: new Button({
         label: "Ok",
         events: {
-        	//@ts-ignore
           click: (e: Event) => {
             this.addChat(e);
           }
