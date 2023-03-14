@@ -1,7 +1,7 @@
 {
-  "name": "sprint_4",
+  "name": "messenger",
   "version": "1.0.0",
-  "description": "",
+  "description": "Messenger Sprint_4",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
