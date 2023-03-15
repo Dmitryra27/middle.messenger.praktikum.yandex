@@ -1,6 +1,6 @@
 import Block from "../../core/Block";
 import {validate, validEvents} from "../../utils/validateInput";
-import ErrorInput from "../ErrorInput/errorInput";
+//import ErrorInput from "../ErrorInput/errorInput";
 import Input from "../input/index";
 import template from "./formInput.hbs";
 import {default as styles} from "./formInput.module.scss";
@@ -28,9 +28,9 @@ class FormInput extends Block {
 
   init() {
     const {label, type, name, placeholder, validation} = this.props;
-    this.children.error = new ErrorInput({
-      text: "",
-    });
+    //this.children.error = new ErrorInput({
+     // text: "",
+    //});
     this.children.input = new Input({
       label,
       type,
@@ -40,7 +40,7 @@ class FormInput extends Block {
       events: validEvents(validation),
     });
 
-    validation.errorComponent = this.children.error;
+    //validation.errorComponent = this.children.error;
   }
 
   render() {
