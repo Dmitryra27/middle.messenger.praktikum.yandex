@@ -6,8 +6,9 @@
     "dev": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=production webpack && node ./server.js",
-    "lint:scss": "stylelint \"**/*.scss\"",
-    "lint": "eslint .",
+    "stylelint": "stylelint \"**/*.scss\"",
+    "eslint": "eslint --fix --ext .ts",
+    "lint:all":"npm run eslint && npm run stylelint",
     "test": "mocha --require ts-node/register --require ./mochaSetup.js './src/**/*.test.ts'"
   },
   "husky": {
