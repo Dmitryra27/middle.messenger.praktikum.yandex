@@ -10,7 +10,7 @@ import {default as styles} from "./changePassword.module.scss";
 
 import ProfileController from "../../../controlles/ProfileController";
 import { PasswordData } from "../../../types/interfaces";
-import FormInput from "../../../components/FormInput";
+import FormInput from "../../../components/FormInput/index";
 import Router from "../../../router/Router";
 import Store from "../../../store/Store";
 import ErrorText from "../../../components/errorText";
@@ -28,7 +28,7 @@ export default class ChangePassword extends Block {
 
   async changePassword(e: Event) {
     this.onSubmit(e);
-          
+
     if (this.oldPassword.value && this.password.value) {
       const data = {
         oldPassword: this.oldPassword.value,
@@ -47,31 +47,31 @@ export default class ChangePassword extends Block {
 
         (this.children.oldPassword as Block).setProps({validation: this.oldPassword});
         (this.children.newPassword as Block).setProps({validation: this.password});
-        
+
         (this.children.error as Block).setProps({error: ""});
       }
-    }   
+    }
   }
 
   init() {
     this.oldPassword = validateInput("", "oldPassword");
     this.password = validateInput("", "password");
-  
+
     this.children.oldPassword = new FormInput({
       label: "Старый пароль",
       type: "password",
-      name: "oldPassword", 
+      name: "oldPassword",
       placeholder: "Введите старый пароль",
       validation: this.oldPassword,
-      propStyle: styles.input  
+      propStyle: styles.input
     });
     this.children.newPassword = new FormInput({
       label: "Новый пароль",
       type: "password",
-      name: "password", 
+      name: "password",
       placeholder: "Введите новый пароль",
       validation: this.password,
-      propStyle: styles.input  
+      propStyle: styles.input
     });
     this.children.save = new Button({
       label: "Сохранить",
@@ -80,7 +80,7 @@ export default class ChangePassword extends Block {
         click: (e) => {
           e.preventDefault();
           this.changePassword(e);
-        }, 
+        },
       },
       propStyle: styles.btn
     });
@@ -91,7 +91,7 @@ export default class ChangePassword extends Block {
         click: () => {
           Router.go("/settings");
         }
-      }, 
+      },
       propStyle: styles.btn,
       secondary: true,
     });
