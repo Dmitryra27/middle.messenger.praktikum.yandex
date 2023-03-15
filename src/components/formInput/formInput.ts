@@ -3,7 +3,8 @@ import {validate, validEvents} from "../../utils/validateInput";
 //import ErrorInput from "../ErrorInput/errorInput";
 import Input from "../input/index";
 import template from "./formInput.hbs";
-import {default as styles} from "./formInput.module.scss";
+//import {default as styles} from "./formInput.module.scss";
+import * as styles from  "./formInput.module.scss";
 
 interface FormInputProps {
   label?: string,
