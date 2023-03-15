@@ -56,4 +56,4 @@ npm run prepare
 
 ###Docker
 
-docker build -t messenger . docker run -dp 3000:3000 messenger
+docker build -t messenger . docker run -p 3000:3000 messenger

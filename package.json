@@ -4,8 +4,8 @@
   "description": "Messenger Sprint_4",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=development webpack ",
-    "start": "NODE_ENV=production webpack && node ./server.js",
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=production webpack && node ./server.js",
     "lint:scss": "stylelint \"**/*.scss\"",
     "lint": "eslint .",
     "test": "mocha --require ts-node/register --require ./mochaSetup.js './src/**/*.test.ts'"
