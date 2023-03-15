@@ -1,5 +1,4 @@
-FROM node:16-alpine
-
+FROM node:18.12.1-alpine
 WORKDIR /var/www
 
 COPY package*.json ./
@@ -12,5 +11,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD node server.js
-
+CMD ["node", "server.js"]
