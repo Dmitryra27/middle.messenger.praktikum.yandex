@@ -1,7 +1,7 @@
 import Block from "../../core/Block";
 import {validate, validEvents} from "../../utils/validateInput";
 import ErrorInput from "../ErrorInput/index";
-import Input from "../input";
+import Input from "../input/index";
 import template from "./formInput.hbs";
 import {default as styles} from "./formInput.module.scss";
 
@@ -10,11 +10,12 @@ interface FormInputProps {
   type: string,
   name: string,
   placeholder: string,
+
   validation: validate,
   propStyle?: string,
 }
 
-export default class FormInput extends Block {
+class FormInput extends Block {
   constructor(props: FormInputProps) {
     super(props);
   }
@@ -46,3 +47,5 @@ export default class FormInput extends Block {
     return this.compile(template, {...this.props, styles});
   }
 }
+
+export default FormInput
