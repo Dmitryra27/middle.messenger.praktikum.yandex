@@ -7,7 +7,7 @@ interface ErrorInputProps {
 }
 
 class ErrorInput extends Block {
-  constructor(props: ErrorInputProps) {
+  constructor(props?: ErrorInputProps) {
     super(props);
   }
 
