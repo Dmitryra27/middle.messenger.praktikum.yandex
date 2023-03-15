@@ -10,7 +10,7 @@ import {default as styles} from "./editProfile.module.scss";
 
 import ProfileController from "../../../controlles/ProfileController";
 import { ProfileData } from "../../../types/interfaces";
-import FormInput from "../../../components/FormInput/index";
+import FormInput from "../../../components/FormInput/formInput";
 import Router from "../../../router/Router";
 import Store from "../../../store/Store";
 import ErrorText from "../../../components/errorText";
