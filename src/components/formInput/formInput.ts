@@ -2,7 +2,7 @@ import Block from "../../core/Block";
 import {validate, validEvents} from "../../utils/validateInput";
 //import ErrorInput from "../ErrorInput/errorInput";
 import Input from "../input/index";
-import template from "./formInput.hbs";
+import template from "./formInput1.hbs";
 //import {default as styles} from "./formInput.module.scss";
 import * as styles from  "./formInput.module.scss";
 
