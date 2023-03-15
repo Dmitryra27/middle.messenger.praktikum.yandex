@@ -6,7 +6,7 @@ interface ErrorInputProps {
   text?: string,
 }
 
-export default class ErrorInput extends Block {
+class ErrorInput extends Block {
   constructor(props: ErrorInputProps) {
     super(props);
   }
@@ -15,3 +15,5 @@ export default class ErrorInput extends Block {
     return this.compile(template, {...this.props, styles});
   }
 }
+
+export default ErrorInput
