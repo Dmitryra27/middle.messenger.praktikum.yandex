@@ -45,6 +45,10 @@ HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parc
 
 [Сайт на хостинге netlify.com](https://dreamy-cassata-053c4c.netlify.app/)
 
+### Render.com
+
+[Сайт на хостинге render.com с использованием Docker](https://messenger-ajx3.onrender.com)
+
 ###Запуск тестов
 
 npm run test
@@ -57,3 +61,5 @@ npm run prepare
 ###Docker
 
 docker build -t messenger . docker run -p 3000:3000 messenger
+
+
