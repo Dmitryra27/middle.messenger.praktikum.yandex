@@ -3,7 +3,7 @@ import Block from "../../core/Block";
 import ButtonIcon from "../buttonIcon";
 import Message from "../message";
 import template from "./chatWindow.hbs";
-import FormInput from "../FormInput";
+import FormInput from "../FormInput/index";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
@@ -43,7 +43,7 @@ class ChatWindow extends Block {
 
     return props.messages.map(data => {
       return new Message({
-        ...data, 
+        ...data,
         send: props.userId === data.user_id,
       });
     });
@@ -130,10 +130,10 @@ class ChatWindow extends Block {
     });
     this.children.message = new FormInput({
       type: "text",
-      name: "message", 
+      name: "message",
       placeholder: "Type your message...",
       validation: this.message,
-      propStyle: styles.message, 
+      propStyle: styles.message,
     });
     this.children.send = new ButtonIcon({
       label: "Send",
@@ -143,13 +143,13 @@ class ChatWindow extends Block {
       events: {
         click: (e) => {
           this.onSubmit(e);
-          
+
           if (this.message.value) {
             MessageController.sendMessage(this.props.selectedChat, this.message.value);
 
             this.message.value = "";
             (this.children.message as Block).setProps({validation: this.message});
-          } 
+          }
         }
       },
     });
@@ -158,7 +158,7 @@ class ChatWindow extends Block {
 
     this.children.modalRemoveUser = new ModalUser({active: false, addUser: false});
 
-    this.children.modalDeleteChat = new ModalDelete({active: false});    
+    this.children.modalDeleteChat = new ModalDelete({active: false});
 
     this.children.modalAvatar = new ModalAvatar({active: false});
   }

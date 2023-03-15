@@ -13,7 +13,7 @@ import {default as styles} from "./chatList.module.scss";
 import plus from "../../../static/icons/plus.svg";
 import Modal from "../modal";
 import Button from "../button";
-import FormInput from "../FormInput";
+import FormInput from "../FormInput/index";
 import validateInput, { validate } from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 
@@ -38,9 +38,9 @@ class ChatList extends Block {
 
   async addChat(e: Event) {
     e.preventDefault();
-    
+
     const data = this.onSubmit(e);
-            
+
     if (data) {
       await ChatController.create(this.chat_name.value);
 
@@ -87,16 +87,16 @@ class ChatList extends Block {
 
     this.children.search = new Input({
       type: "text",
-      name: "search", 
+      name: "search",
       placeholder: "Search",
       events: {
         change: (e) => {
           Store.set("search", (e.target as HTMLInputElement).value.toLowerCase());
         }
       },
-      propStyle: styles.search, 
+      propStyle: styles.search,
     });
-    
+
     this.children.newChat = new ButtonIcon({
       label: "Add chat",
       icon: plus,
@@ -114,7 +114,7 @@ class ChatList extends Block {
       content: new FormInput({
         label: "Chat name",
         type: "text",
-        name: "chat_name", 
+        name: "chat_name",
         placeholder: "Enter chat name...",
         validation: this.chat_name,
       }),
@@ -162,6 +162,6 @@ const withChatList = withStore((state: state) => {
   }
 });
 
-  
+
 
 export default withChatList(ChatList);

@@ -6,8 +6,8 @@ import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 import AuthController from "../../controlles/AuthController";
 import { SigninData } from "../../types/interfaces";
-import FormInput from "../../components/FormInput";
-import ErrorText from "../../components/errorText";
+import FormInput from "../../components/FormInput/index";
+import ErrorText from "../../components/errorText/index";
 import Store from "../../store/Store";
 
 interface SigninProps {
@@ -26,7 +26,7 @@ export default class Signin extends Block {
   async auth(e: Event) {
     const data = this.onSubmit(e);
 
-    if (data) { 
+    if (data) {
       await AuthController.signin(data as SigninData);
 
       const error = Store.getState().errorAuth;
@@ -46,14 +46,14 @@ export default class Signin extends Block {
       type: "text",
       name: "login",
       placeholder: "Enter your login",
-      validation: this.login, 
+      validation: this.login,
     });
     this.children.password = new FormInput({
       label: "Password",
       type: "password",
-      name: "password", 
+      name: "password",
       placeholder: "Enter your password",
-      validation: this.password,   
+      validation: this.password,
     });
     this.children.button = new Button({
       label: "Sign in",
@@ -62,14 +62,14 @@ export default class Signin extends Block {
         click: (e: PointerEvent) => {
           this.auth(e);
         }
-      }, 
+      },
       propStyle: this.props.styles.btn,
     });
     this.children.error = new ErrorText({});
   }
 
   render() {
-    return this.compile(template, 
+    return this.compile(template,
       {...this.props});
   }
 }

@@ -7,7 +7,7 @@ import Modal from "../../modal";
 import withStore from "../../../hocs/withStore";
 import validateInput, { validate } from "../../../utils/validateInput";
 import validationForm from "../../../utils/validationForm";
-import FormInput from "../../FormInput";
+import FormInput from "../../FormInput/index";
 import Button from "../../button";
 import ProfileController from "../../../controlles/ProfileController";
 import Store from "../../../store/Store";
@@ -57,7 +57,7 @@ class BaseModal extends Block {
     if (_oldProps.active !== newProps.active) {
       (this.children.modal as Block).setProps({active: newProps.active});
     }
-    
+
     return false;
   }
 
@@ -71,7 +71,7 @@ class BaseModal extends Block {
       content: new FormInput({
         label: "User login",
         type: "text",
-        name: "user_login", 
+        name: "user_login",
         placeholder: "Enter user login...",
         validation: this.user_login,
       }),
@@ -79,7 +79,7 @@ class BaseModal extends Block {
         label: "Ok",
         events: {
           click: (e: Event) => {
-            this.addOrRemoveUser(e); 
+            this.addOrRemoveUser(e);
           }
         },
         propStyle: styles.btn,
