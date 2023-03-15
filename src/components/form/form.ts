@@ -15,7 +15,7 @@ interface FormInputProps {
   propStyle?: string,
 }
 
-class Form extends Block {
+class FormInput extends Block {
   constructor(props: FormInputProps) {
     super(props);
   }
@@ -25,4 +25,4 @@ class Form extends Block {
   }
 }
 
-export default Form
+export default FormInput
