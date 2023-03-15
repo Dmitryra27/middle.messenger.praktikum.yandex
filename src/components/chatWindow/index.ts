@@ -3,7 +3,7 @@ import Block from "../../core/Block";
 import ButtonIcon from "../buttonIcon";
 import Message from "../message";
 import template from "./chatWindow.hbs";
-import FormInput from "../FormInput/formInput";
+import FormInput from "../form/form";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";

@@ -13,7 +13,7 @@ import {default as styles} from "./chatList.module.scss";
 import plus from "../../../static/icons/plus.svg";
 import Modal from "../modal";
 import Button from "../button";
-import FormInput from "../FormInput/formInput";
+import FormInput from "../form/form";
 import validateInput, { validate } from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 

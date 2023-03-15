@@ -7,7 +7,7 @@ import Modal from "../../modal";
 import withStore from "../../../hocs/withStore";
 import validateInput, { validate } from "../../../utils/validateInput";
 import validationForm from "../../../utils/validationForm";
-import FormInput from "../../FormInput/formInput";
+import FormInput from "../../form/form";
 import Button from "../../button";
 import ProfileController from "../../../controlles/ProfileController";
 import Store from "../../../store/Store";

@@ -6,7 +6,7 @@ import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 import AuthController from "../../controlles/AuthController";
 import { SigninData } from "../../types/interfaces";
-import FormInput from "../../components/FormInput/formInput";
+import FormInput from "../../components/form/form";
 import ErrorText from "../../components/errorText/index";
 import Store from "../../store/Store";
 
