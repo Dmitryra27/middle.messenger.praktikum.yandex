@@ -14,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  background-color:var(--light)
 }
 
 .options {
@@ -62,7 +61,7 @@
   padding: 50px 30px;
   overflow: auto;
   white-space: nowrap;
-  background-color: var(--white);
+  background-color: var(--color-grey-light);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

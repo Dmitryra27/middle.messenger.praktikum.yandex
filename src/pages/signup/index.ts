@@ -1,16 +1,14 @@
 import Block from "../../core/Block";
 import template from "./signup.hbs";
 import Button from "../../components/button";
-//@ts-ignore
-import * as styles from "./styles.module.scss";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 import AuthController from "../../controlles/AuthController";
 import { SignupData } from "../../types/interfaces";
-import FormInput from "../../components/formInput";
+import FormInput from "../../components/form/form";
 import Store from "../../store/Store";
-import ErrorText from "../../components/errorText";
+import ErrorText from "../../components/errorText/index";
 
 interface SignupProps {
   styles: Record<string, string>
@@ -23,7 +21,7 @@ export default class Signup extends Block {
   private second_name!: validate;
   private phone!: validate;
   private password!: validate;
-  private onSubmit = validationForm(this.email, 
+  private onSubmit = validationForm(this.email,
     this.login,
     this.first_name,
     this.second_name,
@@ -37,7 +35,7 @@ export default class Signup extends Block {
   async auth(e: Event) {
     const data = this.onSubmit(e);
 
-    if (data) { 
+    if (data) {
       await AuthController.signup(data as SignupData);
 
       const error = Store.getState().errorAuth;
@@ -47,7 +45,7 @@ export default class Signup extends Block {
       }
     }
   }
-  
+
   init() {
     this.email = validateInput("", "email");
     this.login = validateInput("", "login");
@@ -57,61 +55,61 @@ export default class Signup extends Block {
     this.password = validateInput("", "password");
 
     this.children.email = new FormInput({
-      label: "Почта",
+      label: "E-mail",
       type: "email",
-      name: "email", 
-      placeholder: "Введите почту",
-      validation: this.email,  
+      name: "email",
+      placeholder: "Enter your e-mail address",
+      validation: this.email,
     });
     this.children.login = new FormInput({
-      label: "Логин",
+      label: "Login",
       type: "text",
-      name: "login", 
-      placeholder: "Придумайте логин",
-      validation: this.login,   
+      name: "login",
+      placeholder: "Enter your login",
+      validation: this.login,
     });
     this.children.firstName = new FormInput({
-      label: "Имя",
+      label: "First name",
       type: "text",
-      name: "first_name", 
-      placeholder: "Введите имя",
-      validation: this.first_name,   
+      name: "first_name",
+      placeholder: "Enter your first name",
+      validation: this.first_name,
     });
     this.children.secondName = new FormInput({
-      label: "Фамилия",
+      label: "Second name",
       type: "text",
-      name: "second_name", 
-      placeholder: "Фамилия",
-      validation: this.second_name,   
+      name: "second_name",
+      placeholder: "Enter your second name",
+      validation: this.second_name,
     });
     this.children.phone = new FormInput({
-      label: "Телефон",
+      label: "Phone",
       type: "tel",
-      name: "phone", 
-      placeholder: "Введите телефон",
-      validation: this.phone,   
+      name: "phone",
+      placeholder: "Enter your phone",
+      validation: this.phone,
     });
     this.children.password = new FormInput({
-      label: "Пароль",
+      label: "Password",
       type: "password",
-      name: "password", 
-      placeholder: "Введите пароль",
-      validation: this.password,   
+      name: "password",
+      placeholder: "Enter your password",
+      validation: this.password,
     });
     this.children.button = new Button({
-      label: "Регистрация",
+      label: "Sign up",
       events: {
         click: (e) => {
           this.auth(e);
         }
-      }, 
+      },
       propStyle: this.props.styles.btn,
     });
     this.children.error = new ErrorText({});
   }
 
   render() {
-    return this.compile(template, 
+    return this.compile(template,
       {...this.props});
   }
 }

@@ -1,15 +1,13 @@
 import Block from "../../core/Block";
 import template from "./signin.hbs";
-//@ts-ignore
-import * as styles from "./styles.module.scss";
 import Button from "../../components/button";
 
 import validateInput, {validate} from "../../utils/validateInput";
 import validationForm from "../../utils/validationForm";
 import AuthController from "../../controlles/AuthController";
 import { SigninData } from "../../types/interfaces";
-import FormInput from "../../components/formInput";
-import ErrorText from "../../components/errorText";
+import FormInput from "../../components/form/form";
+import ErrorText from "../../components/errorText/index";
 import Store from "../../store/Store";
 
 interface SigninProps {
@@ -25,10 +23,10 @@ export default class Signin extends Block {
     super(props);
   }
 
-  async auth(e: Event|PointerEvent) {
+  async auth(e: Event) {
     const data = this.onSubmit(e);
 
-    if (data) { 
+    if (data) {
       await AuthController.signin(data as SigninData);
 
       const error = Store.getState().errorAuth;
@@ -44,35 +42,34 @@ export default class Signin extends Block {
     this.password = validateInput("", "password");
 
     this.children.login = new FormInput({
-      label: "Логин",
+      label: "Login",
       type: "text",
       name: "login",
-      placeholder: "Введите логин",
+      placeholder: "Enter your login",
       validation: this.login,
-			propStyle:'signin_form'
     });
     this.children.password = new FormInput({
-      label: "Пароль",
+      label: "Password",
       type: "password",
-      name: "password", 
-      placeholder: "Введите пароль",
-      validation: this.password,   
+      name: "password",
+      placeholder: "Enter your password",
+      validation: this.password,
     });
     this.children.button = new Button({
-      label: "Войти",
+      label: "Sign in",
       type: "submit",
       events: {
-        click: (e) => {
+        click: (e: PointerEvent) => {
           this.auth(e);
         }
-      }, 
+      },
       propStyle: this.props.styles.btn,
     });
     this.children.error = new ErrorText({});
   }
 
   render() {
-    return this.compile(template, 
-      {...this.props });
+    return this.compile(template,
+      {...this.props});
   }
 }

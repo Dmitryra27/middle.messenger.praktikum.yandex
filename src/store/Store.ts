@@ -1,5 +1,5 @@
 import { state } from "../types/types";
-import EventBus from "../core/EventBus";
+import { EventBus } from "../core/EventBus";
 import { set } from "../utils/helpers";
 
 type StoreEvents = {

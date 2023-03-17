@@ -1,7 +1,7 @@
 import Block from "../../../core/Block";
 import template from "./modal.hbs";
 
-import * as styles from "./modal.module.scss";
+import {default as styles} from "./modal.module.scss";
 import ChatController from "../../../controlles/ChatController";
 import Modal from "../../modal";
 import withStore from "../../../hocs/withStore";
@@ -41,7 +41,7 @@ class BaseModal extends Block {
   init() {
     this.children.modal = new Modal({
       active: false,
-      title: "Удалить чат?",
+      title: "Delete this chat?",
       submit: new Button({
         label: "Ok",
         events: {

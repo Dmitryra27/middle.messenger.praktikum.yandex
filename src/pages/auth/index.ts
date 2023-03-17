@@ -3,7 +3,7 @@ import template from "./auth.hbs";
 import Signin from "../signin";
 import Signup from "../signup";
 
-import * as styles from "./auth.module.scss";
+import {default as styles} from "./auth.module.scss";
 import { Link } from "../../components/link";
 
 interface AuthProps {
@@ -18,17 +18,17 @@ interface AuthData {
 }
 
 const dataSignin: AuthData = {
-  title: "ВХОД",
-  question: "Нет Аккаунта?",
+  title: "Sign in",
+  question: "Don’t have an account?",
   to: "/sign-up",
-  label: "Регистрация",
+  label: "Sign up",
 }
 
 const dataSignup: AuthData = {
-  title: "Регистрация",
-  question: "Есть аккаунт ?",
+  title: "Sign up",
+  question: "Already have an account?",
   to: "/",
-  label: "Вход"
+  label: "Sign in"
 }
 
 export default class Auth extends Block {

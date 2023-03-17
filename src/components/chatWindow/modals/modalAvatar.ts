@@ -1,7 +1,7 @@
 import Block from "../../../core/Block";
 import template from "./modal.hbs";
 
-import * as styles from "./modal.module.scss";
+import {default as styles} from "./modal.module.scss";
 
 import UploadFile from "../../uploadFile";
 import ChatController from "../../../controlles/ChatController";
@@ -46,7 +46,7 @@ class BaseModal extends Block {
     }),
     this.children.modal = new Modal({
       active: false,
-      title: "Выберите Аватар для чата",
+      title: "Choose an avatar for the chat",
       content: this.children.upload,
       events: {
         click: () => {

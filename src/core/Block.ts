@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-import EventBus from './EventBus';
+import { EventBus } from './EventBus';
 import {getStub, getStubSelector} from "../utils/stub";
 
 type Element = HTMLElement | null;
@@ -100,25 +100,18 @@ export default class Block {
     return new DocumentFragment();
   }
 
-  protected compile(template: HandlebarsTemplateDelegate, context?: Props) {
+  protected compile(template: (context: any) => string, context?: Props) {
     const contextAndStubs = {...context};
 
     Object.entries(this.children).forEach(([name, component]) => {
       if (Array.isArray(component)) {
         contextAndStubs[name] = component.map(child => getStub(child.id));
       } else {
-      	if (component!==undefined){
-					//console.log('component if= ', component)
-					contextAndStubs[name] = getStub(component.id);
-      	}else{
-					console.log('component in Block else= ', component)
-					contextAndStubs[name] = getStub(this.id);
-				}
-			}
-
+        contextAndStubs[name] = getStub(component.id);
+      }
     });
 
-    const html = template(contextAndStubs);//template(contextStub);
+    const html = template(contextAndStubs);
     const temp = document.createElement("template");
     temp.innerHTML = html;
 
@@ -138,11 +131,7 @@ export default class Block {
       if (Array.isArray(component)) {
         component.forEach(replaceStub);
       } else {
-				if (component!==undefined) {
-					replaceStub(component);
-				}else{
-					return;
-				}
+        replaceStub(component);
       }
     });  
   

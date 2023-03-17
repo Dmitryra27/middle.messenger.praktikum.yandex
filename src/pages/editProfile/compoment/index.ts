@@ -1,22 +1,23 @@
 import Block from "../../../core/Block";
 import template from "./editProfile.hbs";
 import Button from "../../../components/button";
-import { Content } from "../../../types/types";
 
 import validateInput, {validate} from "../../../utils/validateInput";
 import validationForm from "../../../utils/validationForm";
 
-import * as styles from "./editProfile.module.scss";
+//import * as styles from "./editProfile.module.scss";
+import {default as styles} from "./editProfile.module.scss";
+
 import ProfileController from "../../../controlles/ProfileController";
 import { ProfileData } from "../../../types/interfaces";
-import FormInput from "../../../components/formInput";
+import FormInput from "../../../components/form/form";
 import Router from "../../../router/Router";
 import Store from "../../../store/Store";
 import ErrorText from "../../../components/errorText";
-//import {ProfileProps} from "../../index";
+
 
 export interface EditProfileProps {
-  changeContent: (content: Content) => void,
+
   email: string,
   login: string,
   first_name: string,
@@ -33,7 +34,7 @@ export default class EditProfile extends Block {
   private second_name!: validate;
   private display_name!: validate;
   private phone!: validate;
-  private onSubmit = validationForm(this.email, 
+  private onSubmit = validationForm(this.email,
     this.login,
     this.first_name,
     this.second_name,
@@ -46,7 +47,7 @@ export default class EditProfile extends Block {
 
   async editProfile(e: Event) {
     const data = this.onSubmit(e);
-          
+
     if (data) {
       await ProfileController.changeProfile(data as ProfileData);
 
@@ -55,7 +56,7 @@ export default class EditProfile extends Block {
       if (error) {
         (this.children.error as Block).setProps({error});
       }
-    }   
+    }
   }
 
   init() {
@@ -67,54 +68,54 @@ export default class EditProfile extends Block {
     this.second_name = validateInput(second_name, "second_name");
     this.display_name = validateInput(display_name, "display_name");
     this.phone = validateInput(phone, "phone");
-  
+
     this.children.email = new FormInput({
       label: "Почта",
       type: "email",
-      name: "email", 
+      name: "email",
       placeholder: "Enter your e-mail address",
       validation: this.email,
-      propStyle: styles.input   
+      propStyle: styles.input
     });
     this.children.login = new FormInput({
       label: "Логин",
       type: "text",
-      name: "login", 
+      name: "login",
       placeholder: "Enter your login",
       validation: this.login,
-      propStyle: styles.input  
+      propStyle: styles.input
     });
     this.children.firstName = new FormInput({
       label: "Имя",
       type: "text",
-      name: "first_name", 
+      name: "first_name",
       placeholder: "Enter your first name",
       validation: this.first_name,
-      propStyle: styles.input   
+      propStyle: styles.input
     });
     this.children.secondName = new FormInput({
       label: "Фамилия",
       type: "text",
-      name: "second_name", 
+      name: "second_name",
       placeholder: "Enter your second name",
       validation: this.second_name,
-      propStyle: styles.input   
+      propStyle: styles.input
     });
     this.children.displayName = new FormInput({
       label: "Имя в чате",
       type: "string",
-      name: "display_name", 
+      name: "display_name",
       placeholder: "Enter your display name",
       validation: this.display_name,
-      propStyle: styles.input   
+      propStyle: styles.input
     });
     this.children.phone = new FormInput({
       label: "Телефон",
       type: "tel",
-      name: "phone", 
+      name: "phone",
       placeholder: "Enter your phone",
       validation: this.phone,
-      propStyle: styles.input  
+      propStyle: styles.input
     });
     this.children.save = new Button({
       label: "Сохранить",
@@ -123,7 +124,7 @@ export default class EditProfile extends Block {
         click: (e) => {
           this.editProfile(e);
         }
-      }, 
+      },
       propStyle: styles.btn
     });
     this.children.close = new Button({
@@ -133,7 +134,7 @@ export default class EditProfile extends Block {
         click: () => {
           Router.go("/settings");
         }
-      }, 
+      },
       propStyle: styles.btn,
       secondary: true,
     });
@@ -141,8 +142,8 @@ export default class EditProfile extends Block {
   }
 
   render() {
-    return this.compile(template, 
-      {...this.props, 
+    return this.compile(template,
+      {...this.props,
       styles});
   }
 }

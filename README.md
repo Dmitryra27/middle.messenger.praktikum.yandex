@@ -17,6 +17,9 @@
 * Неавторизованный пользователь отправляется на страницу логина.
 * Чаты добавляются в store.
 
+### В Четвертом спринте добавлены:
+    Webpack, написаны тесты
+
 ### Польза проекта
 
 Проект является проектом с открытым кодом и после его доработки может быть использован в качестве чата компании или
@@ -36,8 +39,27 @@
 
 ### Используемый стек технологий
 
-HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter, babel
+HTML, CSS, SCSS, JS, Typescript, NodeJS, библиотеки : express.js, Parcel, Handlebars, linter, babel, Webpack
 
 ### Netlify
 
 [Сайт на хостинге netlify.com](https://dreamy-cassata-053c4c.netlify.app/)
+
+### Render.com
+
+[Сайт на хостинге render.com с использованием Docker](https://messenger-ajx3.onrender.com)
+
+###Запуск тестов
+
+npm run test
+
+###Precommit. 
+
+Установка хука husky - Git:
+npm run prepare
+
+###Docker
+
+docker build -t messenger . docker run -p 3000:3000 messenger
+
+

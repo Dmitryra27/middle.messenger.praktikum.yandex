@@ -1,5 +1,11 @@
-.propStyle{
-  background-color:var(--lightGrey);
-  border: 1px solid var(--dackGrey);
-  border-radius:30px;
+.main {
+  width: 100%;
+}
+
+.error {
+  margin-top: 5px;
+  color: var(--color-red);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }

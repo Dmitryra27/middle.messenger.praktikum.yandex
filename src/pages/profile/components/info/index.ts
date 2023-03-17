@@ -1,10 +1,9 @@
 import Block from "../../../../core/Block";
 import template from "./info.hbs";
 
-import * as styles from "./info.module.scss";
+//import * as styles from "./info.module.scss";
+import {default as styles} from "./info.module.scss";
 
-//import withStore from "../../../../hocs/withStore";
-//import {  state } from "../../../../types/types";
 import {User} from "../../../../types/interfaces";
 
 export default class Info extends Block {
@@ -19,8 +18,5 @@ export default class Info extends Block {
   }
 }
 
-//const withUser = withStore((state: state) => (state.user));
-
-//export default withUser(Info);
 
 

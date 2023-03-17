@@ -1,12 +1,14 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "plugins": ["stylelint-order"],
   "rules": {
-    "color-hex-case": "lower"
+    "indentation": [
+			2
+		],
+		"color-hex-case": "upper"
   },
-  "ignoreFiles": [
-    "build/*",
-    "dist/*",
-    "node_modules/*",
-    ".parcel-cache"
-  ]
+  "ignoreFiles": ["**/*.css"]
 }

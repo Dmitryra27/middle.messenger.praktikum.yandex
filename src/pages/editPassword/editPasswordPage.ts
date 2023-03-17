@@ -1,6 +1,8 @@
 import Block from "../../core/Block";
 import template from "./editPasswordPage.hbs";
-import * as styles from "./editPasswordPage.module.scss";
+
+import {default as styles} from "./editPasswordPage.module.scss";
+
 import Navbar from "../../components/navbar";
 import ChangePassword from "./component";
 

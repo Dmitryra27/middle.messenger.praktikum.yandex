@@ -1,6 +1,6 @@
 import Block from "../../core/Block";
 import template from "./modal.hbs";
-import * as styles from "./modal.module.scss";
+import {default as styles} from "./modal.module.scss";
 
 import ModalForm from "./modalForm";
 

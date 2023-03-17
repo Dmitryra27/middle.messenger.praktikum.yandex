@@ -1,6 +1,6 @@
 import Block from "../../core/Block";
 import template from "./chatItem.hbs";
-import * as styles from "./chatItem.module.scss";
+import {default as styles} from "./chatItem.module.scss";
 
 interface ChatItemProps {
   photo: string,
@@ -9,7 +9,7 @@ interface ChatItemProps {
   unread_count: number,
   active: boolean,
   events: {
-    click: (e: Event) => void,
+    click: (e: any) => void,
   }, 
 }
 
